@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+.astro/
+
+# Environment files
+.env
+.env.*
+
+# WordPress raw exports
+*.WordPress.*.xml
+migration/raw/
+
+# Logs
+*.log
