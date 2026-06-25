@@ -19,3 +19,4 @@ migration/raw/
 
 # Logs
 *.log
+.eslintcache

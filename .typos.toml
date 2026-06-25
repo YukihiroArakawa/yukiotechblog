@@ -1,0 +1,12 @@
+[files]
+extend-exclude = [
+  "build/",
+  "migration/wordpress-export/",
+  "node_modules/",
+  "pnpm-lock.yaml",
+  "static/posts/",
+]
+
+[default.extend-words]
+yukiotechblog = "yukiotechblog"
+yukiodesuyo = "yukiodesuyo"
