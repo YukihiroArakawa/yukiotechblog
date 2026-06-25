@@ -1,0 +1,7 @@
+.direnv/
+.svelte-kit/
+build/
+dist/
+migration/wordpress-export/
+node_modules/
+static/posts/

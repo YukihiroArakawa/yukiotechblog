@@ -107,7 +107,9 @@ function summaryFromParsed(parsed: ReturnType<typeof parseMarkdown>): PostSummar
     date: normalizeDate(parsed.data.date),
     categories: parsed.data.categories || [],
     excerpt: excerpt(parsed.content),
-    representative: representativeSlugs.includes(parsed.slug as (typeof representativeSlugs)[number])
+    representative: representativeSlugs.includes(
+      parsed.slug as (typeof representativeSlugs)[number]
+    )
   };
 }
 

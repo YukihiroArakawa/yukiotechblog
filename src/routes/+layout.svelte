@@ -7,10 +7,7 @@
 
 <svelte:head>
   <title>yukiotechblog</title>
-  <meta
-    name="description"
-    content="WordPressから移行中の技術ブログのローカルサンプルサイト"
-  />
+  <meta name="description" content="WordPressから移行中の技術ブログのローカルサンプルサイト" />
 </svelte:head>
 
 <div class="shell">

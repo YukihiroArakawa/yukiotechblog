@@ -113,11 +113,12 @@ migration/wordpress-export/posts/
 - `pnpm lint`: ESLintでSvelte/TypeScriptをチェック
 - `pnpm lint:fix`: ESLintで自動修正できる問題を修正
 - `pnpm format`: ESLintの自動修正と `package.json` の並び替え
+- `pnpm format:check`: Prettierで整形済みか確認
 - `pnpm check`: SvelteKit/TypeScriptをチェック
 - `pnpm typos`: typoをチェック
 - `pnpm build`: 静的サイトをビルド
 - `pnpm preview --host 127.0.0.1`: ビルド成果物をプレビュー
 
 `pnpm install` 時にlefthookがpre-commit hookを登録します。
-pre-commitでは `pnpm lint`、`pnpm check`、`pnpm typos` を実行します。
+pre-commitでは `pnpm lint`、`pnpm format:check`、`pnpm check`、`pnpm typos` を実行します。
 pre-pushでは `pnpm build` を実行します。
