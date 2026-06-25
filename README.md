@@ -24,6 +24,14 @@ nix develop
 
 `node_modules` が無い場合、または `pnpm-lock.yaml` が `node_modules/.pnpm/lock.yaml` より新しい場合だけ、dev shellの起動時に `pnpm install --frozen-lockfile` が実行されます。
 
+direnvを使う場合は、初回だけ許可します。
+
+```bash
+direnv allow
+```
+
+以後はこのディレクトリに入ると自動でdev shellが有効化されます。
+
 ## Run Locally
 
 ```bash
