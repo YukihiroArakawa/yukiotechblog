@@ -1,125 +1,101 @@
 # yukiotechblog
 
-## background
+WordPressから移行中の技術ブログです。
+SvelteKit + TypeScriptでローカル確認用のサンプルサイトを提供しています。
 
-https://yukiotechblog.com/ にて技術ブログを運営している
-さくらインターネットのレンタルサーバーでWordpressをホスティングしている
-料金が年間で1万円円ほどかかっているので、CloudFlarePagesに移行したい。
-また、Wordpressでは簡単にブログ構築できてしまってフロントエンドの勉強にならないのでモダンフロントエンドの勉強につながるようにTS、Svelte/Vuejs/Reactあたりを使うようにしたい
-デザインはryoppippi.com、https://github.com/ryoppippi/ryoppippi.comを参考にモノトーンな感じにしたいです。
-元々のブログはWordpressから画像とセットでMDファイルでDLしておきたい　
+プロジェクトの背景、MVP範囲、移行方針は [REQUIREMENTS.md](REQUIREMENTS.md) を参照してください。
 
-## MVP
+## Prerequisites
 
-まずはCloudflare Pagesで公開できる最小構成の技術ブログを作る。
-WordPressの全記事を完全に品質保証して移行することはMVPには含めない。
+- Nix Flakesが使えるNix環境
+- グローバルのNode.js/npm/pnpmは不要
 
-### Scope
+このリポジトリの開発ツールは `flake.nix` で管理します。
+flakeはNode.js、pnpm、Svelte/TypeScript関連の開発ツールを提供します。
 
-- Astro + TypeScriptで実装する
-- デザインテンプレートはastro-eruditeをベースにする
-- 見た目はAnthony Fu風のミニマル/モノトーン寄せにする
-- Markdown記事を表示できるようにする
-- Cloudflare Pagesへデプロイできるようにする
-- WordPressからエクスポートした記事データはリポジトリ内で管理する
+## Setup
 
-### Development environment policy
-
-- 基本環境を汚さないため、Node.jsやnpmはNix Flakeのdev shell経由で使う
-- グローバルnpm installはしない
-- 作業時は`nix develop`または`nix develop -c <command>`を使う
-- リポジトリ固有の依存関係は`package.json`とlock fileで管理する
-
-### WordPress migration policy
-
-- WordPress標準のXMLエクスポートを入力にする
-- 変換には`wordpress-export-to-markdown`を使う
-- 対象は公開済みの`post`のみ
-- XML内の`post`は85件あるが、そのうち公開済み64件をMarkdown化して管理対象にする
-- 下書き21件はMVP対象外として除外する
-- 画像は`--save-images=all`で記事内画像を取得する
-- `wp-content/uploads`全体のバックアップ取得は必須にしない
-- 変換後の記事は記事ごとのフォルダ形式で保存する
-- MVPで表示確認とデザイン調整を行う代表記事は4本に絞る
-
-### Representative articles for MVP verification
-
-- 画像あり長文の記事: `make-destroy-restore-new-sql-ch8-hands-on`
-- コードブロックありの記事: `go-lang-tutorial`
-- 短文の記事: `learn-tidb-from-their-architecture`
-- 日本語タイトルが長い記事: `tidb-ddl-import-error`
-
-## Task inventory
-
-### 1. Repository setup
-
-- Git管理の状態を確認する
-- Node.jsとpackage managerはNix Flakeのdev shellで提供する
-- READMEにMVP方針を残す
-
-### 2. Convert WordPress XML
-
-- `yukio039stechblog.WordPress.2026-06-12.xml`を入力にする
-- `wordpress-export-to-markdown`でMarkdownへ変換する
-- 対象は公開済み`post`のみとする
-- 公開済み64件を記事ごとのフォルダ形式で出力する
-- 変換時に出力される固定ページ、Contact Form、下書きは除外する
-- 記事内画像を保存する
-- 出力先は一旦`migration/wordpress-export/`などにする
-- 変換コマンドはNix Flake経由で実行する
+dev shellを有効化します。
+`nix develop` は、必要に応じて `pnpm-lock.yaml` に基づく依存関係のインストールも実行します。
 
 ```bash
-nix develop -c npx --yes wordpress-export-to-markdown \
-  --wizard=false \
-  --input=yukio039stechblog.WordPress.2026-06-12.xml \
-  --output=migration/wordpress-export \
-  --post-folders=true \
-  --prefix-date=false \
-  --date-folders=none \
-  --save-images=all \
-  --frontmatter-fields=title,date,categories,tags,coverImage,draft,slug,type \
-  --timezone=Asia/Tokyo
+nix develop
 ```
 
-### 3. Select representative articles
+`node_modules` が無い場合、または `pnpm-lock.yaml` が `node_modules/.pnpm/lock.yaml` より新しい場合だけ、dev shellの起動時に `pnpm install --frozen-lockfile` が実行されます。
 
-- 画像あり長文
-- コードブロックあり
-- 短文
-- 長い日本語タイトル
+## Run Locally
 
-### 4. Add Astro project
+```bash
+pnpm dev --host 127.0.0.1
+```
 
-- `astro-erudite`をベースに導入する
-- TypeScript構成を維持する
-- Markdown content collectionを確認する
-- ローカルで起動できる状態にする
+起動後、以下で確認できます。
 
-### 5. Import articles
+```text
+http://127.0.0.1:5173/
+```
 
-- 変換済みMarkdownを`src/content/blog/`配下へ移す
-- 画像パスをAstroで表示できる形に調整する
-- frontmatterをAstroのschemaに合わせる
-- 代表4記事で表示確認する
+トップページはMVP確認用の代表4記事、`/blog` は変換済みの公開済み64記事一覧を表示します。
 
-### 6. Adjust design
+## Check And Build
 
-- Anthony Fu風にミニマル/モノトーン寄せする
-- 記事一覧、記事詳細、ナビ、フッターを調整する
-- 長い日本語タイトル、コードブロック、画像の見た目を確認する
+型チェック:
 
-### 7. Prepare Cloudflare Pages deployment
+```bash
+pnpm check
+```
 
-- build commandを決める
-- output directoryを確認する
-- 必要ならCloudflare向けの設定を追加する
-- デプロイ手順をREADMEに残す
+静的ビルド:
 
-### 8. MVP completion criteria
+```bash
+pnpm build
+```
 
-- ローカルビルドが成功する
-- 代表4記事が崩れず表示される
-- 記事内画像が表示される
-- Cloudflare Pages上で公開できる
-- 公開済み64記事は保存済みである
-- 公開済み64記事の細かい表示品質保証は後続タスクに回す
+ビルド成果物は `build/` に出力されます。
+
+ビルド成果物をローカルで確認する場合:
+
+```bash
+pnpm preview --host 127.0.0.1
+```
+
+## Development Shell
+
+エディタや言語サーバー用にもdev shellを使います。
+
+```bash
+nix develop
+```
+
+dev shell内では `node`、`pnpm`、`svelte-language-server`、`typescript-language-server` が利用できます。
+
+dev shellに入らずに個別コマンドを実行する場合:
+
+```bash
+nix develop -c pnpm check
+```
+
+ローカルサーバーも同じ形で起動できます。
+
+```bash
+nix develop -c pnpm dev --host 127.0.0.1
+```
+
+## Content
+
+WordPressから変換済みの記事は以下にあります。
+
+```text
+migration/wordpress-export/posts/
+```
+
+各記事は `index.md` と `images/` を持つフォルダ形式です。
+アプリはこのMarkdownを読み込み、`scripts/sync-static-assets.mjs` で画像を `static/posts/` に同期して表示します。
+
+## Useful Scripts
+
+- `pnpm dev --host 127.0.0.1`: ローカル開発サーバーを起動
+- `pnpm check`: SvelteKit/TypeScriptをチェック
+- `pnpm build`: 静的サイトをビルド
+- `pnpm preview --host 127.0.0.1`: ビルド成果物をプレビュー

@@ -23,15 +23,30 @@
             pkgs = import nixpkgs { inherit system; };
           }
         );
+
     in
     {
       devShells = forAllSystems (
         { pkgs }:
         {
-          default = pkgs.mkShell {
+          default = pkgs.mkShellNoCC {
             packages = [
               pkgs.nodejs_24
+              pkgs.pnpm_10
+              pkgs.svelte-language-server
+              pkgs.typescript-language-server
             ];
+
+            shellHook = ''
+              echo "yukiotechblog dev shell: node $(node --version), pnpm $(pnpm --version)"
+
+              if [ -f package.json ] && [ -f pnpm-lock.yaml ]; then
+                if [ ! -f node_modules/.pnpm/lock.yaml ] || [ pnpm-lock.yaml -nt node_modules/.pnpm/lock.yaml ]; then
+                  echo "Installing dependencies..."
+                  pnpm install --frozen-lockfile
+                fi
+              fi
+            '';
           };
         }
       );
