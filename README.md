@@ -48,6 +48,12 @@ http://127.0.0.1:5173/
 
 ## Check And Build
 
+lint:
+
+```bash
+pnpm lint
+```
+
 型チェック:
 
 ```bash
@@ -104,6 +110,8 @@ migration/wordpress-export/posts/
 ## Useful Scripts
 
 - `pnpm dev --host 127.0.0.1`: ローカル開発サーバーを起動
+- `pnpm lint`: ESLintでSvelte/TypeScriptをチェック
+- `pnpm lint:fix`: ESLintで自動修正できる問題を修正
 - `pnpm check`: SvelteKit/TypeScriptをチェック
 - `pnpm build`: 静的サイトをビルド
 - `pnpm preview --host 127.0.0.1`: ビルド成果物をプレビュー
