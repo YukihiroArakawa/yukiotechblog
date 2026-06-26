@@ -11,3 +11,4 @@ extend-exclude = [
 [default.extend-words]
 yukiotechblog = "yukiotechblog"
 yukiodesuyo = "yukiodesuyo"
+scrach = "scrach"

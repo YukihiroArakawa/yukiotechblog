@@ -8,6 +8,7 @@ dist/
 .svelte-kit/
 build/
 static/posts/
+static/*/images/
 
 # Environment files
 .env
