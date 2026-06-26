@@ -57,8 +57,11 @@
 
 - [x] GitHubリモートリポジトリを作成する
 - [x] ローカルリポジトリに `origin` を設定する
-- [ ] `main` ブランチをGitHubへpushする
-- [ ] Cloudflare PagesでGitHubリポジトリを接続する
+- [x] `main` ブランチをGitHubへpushする
+- [x] Cloudflareアカウントを作成する
+- [x] Cloudflareにログインできることを確認する
+- [x] Cloudflareの基本的なアカウント設定とメール認証を完了する
+- [x] Cloudflare PagesでGitHubリポジトリを接続する
 - [ ] Cloudflare Pagesのbuild commandを `pnpm build` に設定する
 - [ ] Cloudflare Pagesのoutput directoryを `build` に設定する
 - [ ] Cloudflare Pages上のpreview URLで表示を確認する
