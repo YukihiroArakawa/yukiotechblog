@@ -1,6 +1,7 @@
 [files]
 extend-exclude = [
   "build/",
+  "migration/blog-url-inventory.md",
   "migration/wordpress-export/",
   "node_modules/",
   "pnpm-lock.yaml",
