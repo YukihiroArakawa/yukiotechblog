@@ -55,6 +55,8 @@
 
 ## 6. Cloudflare Pages Deployment
 
+### 6.1 Account And Repository
+
 - [x] GitHubリモートリポジトリを作成する
 - [x] ローカルリポジトリに `origin` を設定する
 - [x] `main` ブランチをGitHubへpushする
@@ -62,11 +64,23 @@
 - [x] Cloudflareにログインできることを確認する
 - [x] Cloudflareの基本的なアカウント設定とメール認証を完了する
 - [x] Cloudflare PagesでGitHubリポジトリを接続する
+
+### 6.2 Wrangler Direct Deploy
+
+- [x] WranglerでCloudflare Pages project `yukiotechblog` を作成する
+- [x] Wranglerで `build/` をCloudflare Pagesへ初回デプロイする
+- [x] `https://yukiotechblog.pages.dev/` がHTTP 200で返ることを確認する
+- [x] `https://yukiotechblog.pages.dev/blog/` がHTTP 200で返ることを確認する
+- [x] 代表記事 `https://yukiotechblog.pages.dev/00-introduction-jp-build-your-own-db/` がHTTP 200で返ることを確認する
+- [x] 代表記事画像がHTTP 200で返ることを確認する
+- [ ] preview URLで代表4記事を目視確認する
+
+### 6.3 GitHub Auto Deploy
+
 - [ ] Cloudflare Pagesのbuild commandを `pnpm build` に設定する
 - [ ] Cloudflare Pagesのoutput directoryを `build` に設定する
-- [ ] Cloudflare Pages上のpreview URLで表示を確認する
-- [ ] preview URLで代表4記事と記事画像を確認する
-- [ ] preview URLで既存URL互換の `/<slug>/` を確認する
+- [ ] GitHub pushでCloudflare Pagesのdeployが自動実行されることを確認する
+- [ ] 自動デプロイ後のpreview URLでトップ、記事一覧、既存URL互換の `/<slug>/` を確認する
 
 ## 7. Domain Migration
 
