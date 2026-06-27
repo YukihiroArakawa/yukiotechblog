@@ -99,6 +99,13 @@ nix develop -c just dev
 Cloudflareの公式CLIであるWranglerもNix dev shellに含めています。
 グローバルに `npm install -g wrangler` する必要はありません。
 
+このリポジトリでは、Cloudflare Pages向けの最低限の構成を
+[`wrangler.toml`](wrangler.toml) で管理しています。
+
+- `name = "yukiotechblog"`
+- `pages_build_output_dir = "build"`
+- `compatibility_date = "2026-06-27"`
+
 ```bash
 nix develop
 just cloudflare-login
@@ -117,6 +124,14 @@ nix develop -c just deploy
 ```
 
 `just deploy` は `pnpm run deploy` を呼び出します。`pnpm run deploy` は `pnpm build` を実行してから、`build/` を `yukiotechblog` Pages project の `main` ブランチとしてデプロイします。
+
+`wrangler.toml` により、Pages project名と build directory はCLI引数に直書きしていません。
+
+ただし、以下はまだ `wrangler.toml` だけでは完結しません。
+
+- Custom domain
+- GitHub連携の自動デプロイ設定
+- Pages project の作成自体
 
 ## Content
 

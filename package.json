@@ -8,7 +8,7 @@
     "build": "vite build",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "predeploy": "pnpm build",
-    "deploy": "wrangler pages deploy build --project-name yukiotechblog --branch main",
+    "deploy": "wrangler pages deploy --branch main",
     "predev": "node scripts/sync-static-assets.mjs",
     "dev": "vite dev",
     "format": "prettier --write . && pnpm lint:fix && pnpm sort-package-json",
