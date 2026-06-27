@@ -7,7 +7,10 @@
 
 <svelte:head>
   <title>yukiotechblog</title>
-  <meta name="description" content="WordPressから移行中の技術ブログのローカルサンプルサイト" />
+  <meta
+    name="description"
+    content="Notes on databases, distributed systems, developer tooling, and engineering experiments."
+  />
 </svelte:head>
 
 <div class="shell">
@@ -15,7 +18,6 @@
     <a class="brand" href={resolve('/')}>yukiotechblog</a>
     <nav aria-label="Primary navigation">
       <a href={resolve('/blog')}>Articles</a>
-      <a href="https://yukiotechblog.com/">Current site</a>
     </nav>
   </header>
 

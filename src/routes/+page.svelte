@@ -6,9 +6,9 @@
 
 <main class="home">
   <section class="intro">
-    <p class="eyebrow">Migration preview</p>
-    <h1>WordPress posts in a minimal SvelteKit site.</h1>
-    <p>代表記事を使って、長文、コードブロック、短文、長い日本語タイトルの表示を確認します。</p>
+    <p class="eyebrow">Engineering notes</p>
+    <h1>yukiotechblog</h1>
+    <p>Notes on databases, distributed systems, developer tooling, and engineering experiments.</p>
   </section>
 
   <section class="post-list" aria-label="Representative articles">
