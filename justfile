@@ -41,4 +41,4 @@ cloudflare-login:
 
 # Deploy the static build to Cloudflare Pages
 deploy:
-    pnpm deploy
+    pnpm run deploy

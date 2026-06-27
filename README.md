@@ -116,7 +116,7 @@ Cloudflare Pagesへローカルからデプロイする場合:
 nix develop -c just deploy
 ```
 
-`just deploy` は `pnpm deploy` を呼び出します。`pnpm deploy` は `pnpm build` を実行してから、`build/` を `yukiotechblog` Pages project の `main` ブランチとしてデプロイします。
+`just deploy` は `pnpm run deploy` を呼び出します。`pnpm run deploy` は `pnpm build` を実行してから、`build/` を `yukiotechblog` Pages project の `main` ブランチとしてデプロイします。
 
 ## Content
 
