@@ -13,8 +13,6 @@ const representativeSlugs = [
   'tidb-ddl-import-error'
 ] as const;
 
-const excludedSlugs = new Set(['単語リスト-補助解説-build-your-own-database-from-scrach-in-go']);
-
 const md = new MarkdownIt({
   html: true,
   linkify: true,
@@ -63,7 +61,6 @@ export async function listPosts(): Promise<PostSummary[]> {
 
   return posts
     .filter((post): post is PostSummary => Boolean(post))
-    .filter((post) => !excludedSlugs.has(post.slug))
     .sort((a, b) => b.date.localeCompare(a.date));
 }
 
