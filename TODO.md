@@ -84,25 +84,57 @@
 
 ## 7. Domain Migration
 
-- [ ] Cloudflareに `yukiotechblog.com` のzoneを追加する
-- [ ] お名前.com側でCloudflare指定のnameserverへ変更する手順を確認する
-- [ ] 現在のDNSレコードを控える
-- [ ] Cloudflare DNSに必要なレコードを設定する
-- [ ] Cloudflare Pagesに `yukiotechblog.com` のcustom domainを設定する
-- [ ] DNS切り替え前にCloudflare Pages側のcustom domain状態を確認する
-- [ ] DNS切り替え後に `https://yukiotechblog.com/` がCloudflare Pagesへ向いていることを確認する
-- [ ] 既存公開URL63件が移行後もHTTP 200で返ることを確認する
+### 7.1 Domain And Registrar Check
+
+- [x] `yukiotechblog.com` の現在の登録事業者が、さくらインターネットかお名前.comか確認する
+- [x] 現在の権威DNS、nameserver、DNSレコードを控える
+- [x] 現在のWordPress/さくらレンタルサーバー向けDNSレコードを控える
+- [x] ドメインのWhois情報、登録者メール、管理画面ログイン可否を確認する
+
+### 7.2 Cloudflare Zone Setup
+
+- [x] Cloudflareに `yukiotechblog.com` のzoneを追加する
+- [x] Cloudflareが提示したnameserverを控える
+- [x] Cloudflare DNSに移行前と同等の必要レコードを設定する
+- [x] Cloudflare Pagesに `yukiotechblog.com` のcustom domainを追加する
+- [x] DNS切り替え前にCloudflare zoneが有効化されたことを確認する
+- [x] Cloudflare Pages側のcustom domain状態を確認する
+
+### 7.3 Registrar Nameserver Cutover
+
+- [x] 登録事業者側でnameserver変更手順を確認する
+- [x] 登録事業者側でCloudflare指定のnameserverへ変更する
+- [x] `dig NS` でCloudflareのnameserverへ切り替わったことを確認する
+- [x] DNS伝播中も旧WordPressが参照される可能性を考慮し、さくらレンタルサーバーを一定期間残す
+
+### 7.4 Post-Cutover Verification
+
+- [x] DNS切り替え後に `https://yukiotechblog.com/` がCloudflare Pagesへ向いていることを確認する
+- [x] `https://yukiotechblog.com/blog/` がHTTP 200で返ることを確認する
+- [x] 代表記事の既存URL互換 `https://yukiotechblog.com/<slug>/` がHTTP 200で返ることを確認する
+- [x] 代表記事画像がHTTP 200で返ることを確認する
+- [x] 既存公開URL63件が移行後もHTTP 200で返ることを確認する
 
 ## 8. Cutover And Rollback
 
 - [ ] 移行直前にWordPress XMLを再エクスポートするか判断する
 - [ ] さくらレンタルサーバー側の現行WordPressを一定期間残す
+- [ ] `@yukiotechblog.com` のメールをさくらレンタルサーバーで使っていないことを確認する
+- [ ] Cloudflare DNSのMX/TXT/SPFレコードにさくら依存が残っていて問題ないか確認する
+- [ ] `mail.yukiotechblog.com` と `ftp.yukiotechblog.com` の扱いを決める
 - [ ] DNS切り替え前の状態へ戻す手順をメモする
 - [ ] 移行後に主要ページ、代表4記事、画像、既存URLを確認する
+- [ ] Cloudflare Pages移行後、1〜2週間程度はさくらレンタルサーバーを解約せず様子を見る
+- [ ] 監視期間中にアクセス、画像、既存URL、メール影響の問題がないことを確認する
+- [ ] さくらレンタルサーバーの解約手順と解約日、請求締め日を確認する
+- [ ] さくらレンタルサーバー解約後に `https://yukiotechblog.com/` と代表記事がHTTP 200で返ることを確認する
 - [ ] 問題がなければさくらレンタルサーバー解約判断を後続タスクに回す
 
 ## 9. Out Of MVP
 
+- [ ] DNS移行後に、お名前.comからCloudflare Registrarへ `yukiotechblog.com` を移管するか検討する
+- [ ] ドメイン移管する場合、お名前.com側の移管ロック解除とAuthCode/EPP code取得手順を確認する
+- [ ] ドメイン移管する場合、登録者メールで移管承認できることを確認する
 - [ ] 公開記事63件すべての本文品質保証
 - [ ] WordPress下書き記事の移行
 - [ ] WordPress固定ページの移行
