@@ -34,6 +34,12 @@ export type Post = PostSummary & {
   html: string;
 };
 
+export type CategorySummary = {
+  name: string;
+  slug: string;
+  count: number;
+};
+
 type Frontmatter = {
   title?: string;
   date?: string | Date;
@@ -68,6 +74,32 @@ export async function listRepresentativePosts(): Promise<PostSummary[]> {
   return posts
     .filter((post) => rank.has(post.slug))
     .sort((a, b) => rank.get(a.slug)! - rank.get(b.slug)!);
+}
+
+export async function listCategories(): Promise<CategorySummary[]> {
+  const posts = await listPosts();
+  const counts = new Map<string, number>();
+
+  for (const post of posts) {
+    for (const category of post.categories) {
+      counts.set(category, (counts.get(category) ?? 0) + 1);
+    }
+  }
+
+  return [...counts.entries()]
+    .map(([name, count]) => ({
+      count,
+      name,
+      slug: categorySlug(name)
+    }))
+    .sort((a, b) => a.name.localeCompare(b.name));
+}
+
+export async function listPostsByCategory(categorySlugParam: string): Promise<PostSummary[]> {
+  const category = decodeCategorySlug(categorySlugParam);
+  const posts = await listPosts();
+
+  return posts.filter((post) => post.categories.includes(category));
 }
 
 export async function readPost(slug: string): Promise<Post> {
@@ -136,4 +168,12 @@ function excerpt(content: string): string {
 
 function rewriteImageLinks(content: string, slug: string): string {
   return content.replaceAll('(images/', `(/${slug}/images/`);
+}
+
+function categorySlug(category: string): string {
+  return category;
+}
+
+function decodeCategorySlug(categorySlugParam: string): string {
+  return decodeURIComponent(categorySlugParam);
 }

@@ -132,6 +132,9 @@
 
 ## 9. Out Of MVP
 
+- [ ] git leaksの設定
+- [x] Articlesをジャンルタグごとにまとめて表示できるようにする
+- [ ] サイト内検索
 - [ ] DNS移行後に、お名前.comからCloudflare Registrarへ `yukiotechblog.com` を移管するか検討する
 - [ ] ドメイン移管する場合、お名前.com側の移管ロック解除とAuthCode/EPP code取得手順を確認する
 - [ ] ドメイン移管する場合、登録者メールで移管承認できることを確認する

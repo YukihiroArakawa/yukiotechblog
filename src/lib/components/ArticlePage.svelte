@@ -17,7 +17,7 @@
     {#if post.categories.length}
       <div class="tags" aria-label="Categories">
         {#each post.categories as category (category)}
-          <span>{category}</span>
+          <a href={resolve(`/category/${encodeURIComponent(category)}`)}>{category}</a>
         {/each}
       </div>
     {/if}

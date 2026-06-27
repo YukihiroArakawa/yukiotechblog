@@ -5,22 +5,17 @@
 </script>
 
 <svelte:head>
-  <title>Articles | yukiotechblog</title>
+  <title>{data.category.name} | yukiotechblog</title>
 </svelte:head>
 
 <main>
   <section class="page-heading">
-    <p class="eyebrow">All posts</p>
-    <h1>Articles</h1>
+    <p class="eyebrow">Category</p>
+    <h1>{data.category.name}</h1>
+    <p>{data.category.count} articles</p>
   </section>
 
-  <section class="category-links" aria-label="Categories">
-    {#each data.categories as category (category.slug)}
-      <a href={resolve(`/category/${category.slug}`)}>{category.name}</a>
-    {/each}
-  </section>
-
-  <section class="post-list" aria-label="All articles">
+  <section class="post-list" aria-label={`${data.category.name} articles`}>
     {#each data.posts as post (post.slug)}
       <article class="post-row">
         <a href={resolve(`/${post.slug}`)}>
