@@ -1,6 +1,5 @@
 # TODO
 
-- [ ] IACの導入
 - [ ] git leaksの設定
 - [ ] SEO
   - [ ] title/description/OGPの最低限のメタデータを設定する
