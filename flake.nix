@@ -31,6 +31,7 @@
         {
           default = pkgs.mkShellNoCC {
             packages = [
+              pkgs.just
               pkgs.nodejs_24
               pkgs.pnpm_10
               pkgs.svelte-language-server
