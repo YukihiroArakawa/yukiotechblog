@@ -61,6 +61,12 @@ compatibility_date = "2026-06-27"
   - Anthony Fu 系のモノトーン寄りで軽い見た目
 - 画面は「記事を読むこと」を主目的にし、ナビゲーションや装飾より本文の可読性を優先する
 
+## CSS Policy
+
+- CSS は保守性、可読性、デバッグ容易性を優先する
+- `src/styles.css` のような global CSS に集約しすぎず、レイアウト、記事本文、syntax highlight など意味のある単位で分割する
+- 新しいスタイル追加時は「一時的に global に足す」のではなく、責務に応じた CSS ファイルを作成または既存の適切な分割先に置く
+
 ## URL And Content Policy
 
 - 既存の公開記事 URL は原則維持する
