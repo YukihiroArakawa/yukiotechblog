@@ -11,7 +11,6 @@
 
 <article class="article">
   <header>
-    <a class="back-link" href={resolve('/')}>Home</a>
     <time datetime={post.date}>{post.date}</time>
     <h1>{post.title}</h1>
     {#if post.categories.length}
