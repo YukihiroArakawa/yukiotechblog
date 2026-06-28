@@ -15,7 +15,6 @@
 - Language: TypeScript
 - Build tool: Vite
 - Package manager: pnpm
-- Task runner: just
 - Infra / deploy CLI: Wrangler
 - Runtime / tooling management: Nix Flakes
 - Hosting: Cloudflare Pages
@@ -28,7 +27,7 @@
 - 開発環境の再現性を優先する
 - グローバルに Node.js、pnpm、Wrangler を入れる前提にしない
 - 依存ツールは可能な限り `flake.nix` で提供する
-- 日常的なコマンド実行は `nix develop` または `just` を入口にする
+- 日常的なコマンド実行は `nix develop` または `pnpm` scripts を入口にする
 
 ### Minimal Infrastructure As Code
 
@@ -41,7 +40,7 @@ pages_build_output_dir = "build"
 compatibility_date = "2026-06-27"
 ```
 
-- `package.json` や `justfile` では、Cloudflare project 名や build directory を可能な限り直書きしない
+- `package.json` では、Cloudflare project 名や build directory を可能な限り直書きしない
 - ただし以下は現時点では `wrangler.toml` だけでは完結しない
   - custom domain
   - GitHub 連携の自動 deploy
@@ -87,20 +86,18 @@ compatibility_date = "2026-06-27"
 主要コマンド:
 
 ```bash
-just
-just dev
-just check
-just build
-just preview
-just deploy
-just cloudflare-login
+pnpm dev
+pnpm check:all
+pnpm build
+pnpm preview
+pnpm deploy
+pnpm cloudflare-login
 ```
 
 補足:
 
-- `just deploy` は `pnpm run deploy` を呼ぶ
-- `pnpm run deploy` は build 後に Cloudflare Pages へ direct deploy する
-- `just check` は軽量な品質確認の入口として扱う
+- `pnpm deploy` は build 後に Cloudflare Pages へ direct deploy する
+- `pnpm check:all` は軽量な品質確認の入口として扱う
 
 ## Quality Policy
 
@@ -112,7 +109,6 @@ just cloudflare-login
 ## Important Files
 
 - `flake.nix`
-- `justfile`
 - `package.json`
 - `wrangler.toml`
 - `README.md`

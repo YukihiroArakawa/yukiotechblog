@@ -22,7 +22,7 @@ direnv allow
 ## Development
 
 ```bash
-just dev
+pnpm dev
 ```
 
 Open:
@@ -34,5 +34,5 @@ http://127.0.0.1:5173/
 ## Build
 
 ```bash
-just build
+pnpm build
 ```
