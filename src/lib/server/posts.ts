@@ -5,7 +5,7 @@ import matter from 'gray-matter';
 import hljs from 'highlight.js';
 import MarkdownIt from 'markdown-it';
 
-const postsRoot = path.join(process.cwd(), 'migration/wordpress-export/posts');
+const postsRoot = path.join(process.cwd(), 'content/posts');
 
 const representativeSlugs = [
   'make-destroy-restore-new-sql-ch8-hands-on',

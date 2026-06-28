@@ -3,7 +3,7 @@ import path from 'node:path';
 import process from 'node:process';
 
 const root = process.cwd();
-const postsRoot = path.join(root, 'migration/wordpress-export/posts');
+const postsRoot = path.join(root, 'content/posts');
 const staticRoot = path.join(root, 'static');
 
 async function main() {

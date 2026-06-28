@@ -2,6 +2,6 @@
 .svelte-kit/
 build/
 dist/
-migration/wordpress-export/
+content/posts/
 node_modules/
 static/posts/

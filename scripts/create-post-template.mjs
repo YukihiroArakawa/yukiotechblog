@@ -3,7 +3,7 @@ import path from 'node:path';
 import process from 'node:process';
 
 const root = process.cwd();
-const postsRoot = path.join(root, 'migration/wordpress-export/posts');
+const postsRoot = path.join(root, 'content/posts');
 
 async function main() {
   const slug = process.argv[2]?.trim();

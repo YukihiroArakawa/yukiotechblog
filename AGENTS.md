@@ -76,7 +76,7 @@ compatibility_date = "2026-06-27"
 
 ## Content Architecture
 
-- 記事データは `migration/wordpress-export/posts/` に置く
+- 記事データは `content/posts/` に置く
 - 各記事は記事ディレクトリ単位で管理し、`index.md` と `images/` を持つ
 - frontmatter を読み取り、Markdown を HTML に変換して配信する
 - 画像は `scripts/sync-static-assets.mjs` で `static/posts/` に同期する

@@ -1,8 +1,8 @@
 # Blog URL Inventory
 
-既存の yukiotechblog.com で公開済みの記事URLを、WordPress移行済みMarkdownのfrontmatterから一覧化した台帳です。
+既存の yukiotechblog.com で公開済みの記事URLを、現在のブログ記事Markdownのfrontmatterから一覧化した台帳です。
 
-- Source: `migration/wordpress-export/posts/*/index.md`
+- Source: `content/posts/*/index.md`
 - URL rule: `https://yukiotechblog.com/<slug>/`
 - Count: 63 published posts
 - Migration requirement: 移行後も同じURLで記事を表示する。暫定的に別パスで表示する場合も、最終公開時は同一パス配信またはredirectで後方互換性を保つ。
