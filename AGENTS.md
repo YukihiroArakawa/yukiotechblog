@@ -90,13 +90,13 @@ pnpm dev
 pnpm check:all
 pnpm build
 pnpm preview
-pnpm deploy
+pnpm deploy:pages
 pnpm cloudflare-login
 ```
 
 補足:
 
-- `pnpm deploy` は build 後に Cloudflare Pages へ direct deploy する
+- `pnpm deploy:pages` は build 後に Cloudflare Pages へ direct deploy する
 - `pnpm check:all` は軽量な品質確認の入口として扱う
 
 ## Quality Policy
