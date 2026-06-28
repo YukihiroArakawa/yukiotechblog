@@ -17,9 +17,6 @@
 <div class="shell">
   <header class="site-header">
     <a class="brand" href={resolve('/')}>yukiotechblog</a>
-    <nav aria-label="Primary navigation">
-      <a href={resolve('/blog')}>Articles</a>
-    </nav>
   </header>
 
   {@render children()}

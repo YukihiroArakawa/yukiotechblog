@@ -11,7 +11,13 @@
     <p>Notes on databases, distributed systems, developer tooling, and engineering experiments.</p>
   </section>
 
-  <section class="post-list" aria-label="Representative articles">
+  <section class="category-links" aria-label="Categories">
+    {#each data.categories as category (category.slug)}
+      <a href={resolve(`/category/${category.slug}`)}>{category.name}</a>
+    {/each}
+  </section>
+
+  <section class="post-list" aria-label="All articles">
     {#each data.posts as post (post.slug)}
       <article class="post-row">
         <a href={resolve(`/${post.slug}`)}>
