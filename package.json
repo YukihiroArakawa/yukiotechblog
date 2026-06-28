@@ -4,25 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "check:all": "pnpm lint && pnpm format:check && pnpm check && pnpm typos",
-    "prebuild": "node scripts/sync-static-assets.mjs",
-    "build": "vite build",
-    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-    "cloudflare-login": "wrangler login",
-    "create:post": "node scripts/create-post-template.mjs",
-    "predeploy:pages": "pnpm build",
-    "deploy:pages": "wrangler pages deploy --branch main",
-    "predev": "node scripts/sync-static-assets.mjs",
-    "dev": "vite dev --host 127.0.0.1",
-    "format": "prettier --write . && pnpm lint:fix && pnpm sort-package-json",
-    "format:check": "prettier --check .",
     "preinstall": "only-allow pnpm",
-    "lint": "eslint --cache .",
-    "lint:fix": "eslint --cache . --fix",
-    "prepare": "lefthook install",
-    "preview": "vite preview --host 127.0.0.1",
-    "sort-package-json": "sort-package-json package.json",
-    "typos": "typos --force-exclude"
+    "prepare": "lefthook install"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.2",

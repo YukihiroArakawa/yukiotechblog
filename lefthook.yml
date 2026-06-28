@@ -2,15 +2,15 @@ pre-commit:
   parallel: true
   commands:
     lint:
-      run: pnpm lint
+      run: just lint
     format:
-      run: pnpm format:check
+      run: just format-check
     check:
-      run: pnpm check
+      run: just typecheck
     typos:
-      run: pnpm typos
+      run: just typos
 
 pre-push:
   commands:
     build:
-      run: pnpm build
+      run: just build
