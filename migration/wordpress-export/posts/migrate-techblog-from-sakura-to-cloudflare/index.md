@@ -113,7 +113,7 @@ https://svelte.dev/docs/kit/routing
 
 このブログプロジェクトだと、以下の通りになりました。
 
-```terminal
+```bash
 $ tree src/routes/
 
 src/routes/
@@ -229,7 +229,7 @@ https://developers.cloudflare.com/workers/wrangler/
 
 Cloudflare Workerプロジェクトを管理することができるとありますが、Pagesの管理にも使えます。
 
-```terminal
+```bash
 $ wrangler pages --help
 wrangler pages
 
