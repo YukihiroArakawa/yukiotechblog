@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import process from 'node:process';
 import matter from 'gray-matter';
+import hljs from 'highlight.js';
 import MarkdownIt from 'markdown-it';
 
 const postsRoot = path.join(process.cwd(), 'migration/wordpress-export/posts');
@@ -15,6 +16,22 @@ const representativeSlugs = [
 
 const md = new MarkdownIt({
   html: true,
+  highlight(code, lang) {
+    if (lang && hljs.getLanguage(lang)) {
+      try {
+        const highlighted = hljs.highlight(code, {
+          ignoreIllegals: true,
+          language: lang
+        }).value;
+
+        return `<pre><code class="hljs language-${lang}">${highlighted}</code></pre>`;
+      } catch {
+        // Fall through to escaped output.
+      }
+    }
+
+    return `<pre><code class="hljs">${escapeHtml(code)}</code></pre>`;
+  },
   linkify: true,
   typographer: true
 });
@@ -173,4 +190,13 @@ function categorySlug(category: string): string {
 
 function decodeCategorySlug(categorySlugParam: string): string {
   return decodeURIComponent(categorySlugParam);
+}
+
+function escapeHtml(value: string): string {
+  return value
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
 }

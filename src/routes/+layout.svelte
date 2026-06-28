@@ -1,5 +1,6 @@
 <script lang="ts">
   import { resolve } from '$app/paths';
+  import '../syntax-highlight.css';
   import '../styles.css';
 
   let { children } = $props();
