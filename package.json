@@ -7,6 +7,7 @@
     "prebuild": "node scripts/sync-static-assets.mjs",
     "build": "vite build",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "create:post": "node scripts/create-post-template.mjs",
     "predeploy": "pnpm build",
     "deploy": "wrangler pages deploy --branch main",
     "predev": "node scripts/sync-static-assets.mjs",

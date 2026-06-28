@@ -31,6 +31,10 @@ format:
 build:
     pnpm build
 
+# Create a new post template
+new-post slug:
+    pnpm run create:post {{slug}}
+
 # Preview the production build
 preview:
     pnpm preview --host 127.0.0.1
