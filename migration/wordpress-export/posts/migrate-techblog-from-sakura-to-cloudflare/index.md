@@ -1,9 +1,9 @@
 ---
 title: "技術ブログをさくらインターネットのレンタルサーバーからCloudflareに移行した"
 date: 2026-06-28
-categories: []
-tags: 
+categories: 
     - "cloudflare"
+    - "svelte"
 slug: "migrate-techblog-from-sakura-to-cloudflare"
 type: "post"
 ---
