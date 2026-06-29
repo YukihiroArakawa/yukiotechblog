@@ -43,12 +43,6 @@ a {
   text-decoration: none;
 }
 
-nav {
-  display: flex;
-  gap: 18px;
-  color: #5f6368;
-}
-
 .home,
 main {
   padding: 40px 0 80px;
@@ -224,10 +218,6 @@ h1 {
     display: block;
   }
 
-  nav {
-    margin-top: 12px;
-  }
-
   .post-row p {
     margin-top: 10px;
   }
@@ -239,7 +229,6 @@ h1 {
     background: #0d1117;
   }
 
-  nav,
   .intro p:not(.eyebrow),
   .post-row p,
   .category-links a,

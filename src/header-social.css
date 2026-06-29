@@ -1,0 +1,39 @@
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #5f6368;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  color: #1f2328;
+}
+
+.social-links svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+@media (max-width: 700px) {
+  .social-links {
+    margin-top: 12px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .social-links a {
+    color: #8d96a0;
+  }
+
+  .social-links a:hover {
+    color: #e6edf3;
+  }
+}
