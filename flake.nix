@@ -37,7 +37,6 @@
               pkgs.svelte-language-server
               pkgs.typos
               pkgs.typescript-language-server
-              pkgs.wrangler
             ];
 
             shellHook = ''

@@ -65,9 +65,9 @@ preview:
 
 # Log in to Cloudflare with Wrangler
 cloudflare-login:
-    wrangler login
+    pnpm exec wrangler login
 
 # Deploy the static build to Cloudflare Pages
 deploy:
     just build
-    wrangler pages deploy --branch main
+    pnpm exec wrangler pages deploy --branch main
