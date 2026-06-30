@@ -4,6 +4,7 @@ import process from 'node:process';
 import matter from 'gray-matter';
 import hljs from 'highlight.js';
 import MarkdownIt from 'markdown-it';
+import { PostVisibilityPolicy } from '$lib/server/post-visibility-policy';
 
 const postsRoot = path.join(process.cwd(), 'content/posts');
 
@@ -119,6 +120,11 @@ export async function listPostsByCategory(categorySlugParam: string): Promise<Po
 export async function readPost(slug: string): Promise<Post> {
   const source = await readMarkdown(slug);
   const parsed = parseMarkdown(slug, source);
+
+  if (PostVisibilityPolicy.isDraft(parsed.data.title)) {
+    throw new Error(`Draft post is not published: ${slug}`);
+  }
+
   const html = md.render(rewriteImageLinks(parsed.content, parsed.slug));
 
   return {
@@ -129,7 +135,13 @@ export async function readPost(slug: string): Promise<Post> {
 
 async function readPostSummary(dirName: string): Promise<PostSummary> {
   const source = await readMarkdown(dirName);
-  return summaryFromParsed(parseMarkdown(dirName, source));
+  const parsed = parseMarkdown(dirName, source);
+
+  if (PostVisibilityPolicy.isDraft(parsed.data.title)) {
+    throw new Error(`Draft post is not published: ${dirName}`);
+  }
+
+  return summaryFromParsed(parsed);
 }
 
 async function readMarkdown(dirName: string): Promise<string> {
