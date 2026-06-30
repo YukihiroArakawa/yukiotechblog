@@ -8,13 +8,6 @@ import { PostVisibilityPolicy } from '$lib/server/post-visibility-policy';
 
 const postsRoot = path.join(process.cwd(), 'content/posts');
 
-const representativeSlugs = [
-  'make-destroy-restore-new-sql-ch8-hands-on',
-  'go-lang-tutorial',
-  'learn-tidb-from-their-architecture',
-  'tidb-ddl-import-error'
-] as const;
-
 const md = new MarkdownIt({
   html: true,
   highlight(code, lang) {
@@ -43,7 +36,6 @@ export type PostSummary = {
   date: string;
   categories: string[];
   excerpt: string;
-  representative: boolean;
 };
 
 export type Post = PostSummary & {
@@ -80,15 +72,6 @@ export async function listPosts(): Promise<PostSummary[]> {
   return posts
     .filter((post): post is PostSummary => Boolean(post))
     .sort((a, b) => b.date.localeCompare(a.date));
-}
-
-export async function listRepresentativePosts(): Promise<PostSummary[]> {
-  const posts = await listPosts();
-  const rank = new Map<string, number>(representativeSlugs.map((slug, index) => [slug, index]));
-
-  return posts
-    .filter((post) => rank.has(post.slug))
-    .sort((a, b) => rank.get(a.slug)! - rank.get(b.slug)!);
 }
 
 export async function listCategories(): Promise<CategorySummary[]> {
@@ -167,10 +150,7 @@ function summaryFromParsed(parsed: ReturnType<typeof parseMarkdown>): PostSummar
     title: parsed.data.title || parsed.slug,
     date: normalizeDate(parsed.data.date),
     categories: parsed.data.categories || [],
-    excerpt: excerpt(parsed.content),
-    representative: representativeSlugs.includes(
-      parsed.slug as (typeof representativeSlugs)[number]
-    )
+    excerpt: excerpt(parsed.content)
   };
 }
 
