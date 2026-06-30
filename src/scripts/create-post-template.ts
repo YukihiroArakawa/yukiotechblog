@@ -1,18 +1,20 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import process from 'node:process';
-import { FileSystemUtil } from './lib/file-system-util.mjs';
-import { PostDateUtil } from './lib/post-date-util.mjs';
-import { PostDirectoryUtil } from './lib/post-directory-util.mjs';
+import { FileSystemUtil } from '../lib/shared/file-system-util';
+import { PostDateUtil } from '../lib/shared/post-date-util';
+import { PostDirectoryUtil } from '../lib/shared/post-directory-util';
 
 const root = process.cwd();
 const postsRoot = path.join(root, 'content/posts');
+
+await main();
 
 async function main() {
   const slug = process.argv[2]?.trim();
 
   if (!slug) {
-    console.error('Usage: node scripts/create-post-template.mjs <slug>');
+    console.error('Usage: pnpm exec node --import tsx src/scripts/create-post-template.ts <slug>');
     process.exit(1);
   }
 
@@ -44,7 +46,7 @@ async function main() {
   console.log(`Created ${path.relative(root, imagesDir)}/`);
 }
 
-function templateFor(slug, date) {
+function templateFor(slug: string, date: string): string {
   const title = slug
     .split('-')
     .filter(Boolean)
@@ -65,7 +67,7 @@ Write your draft here.
 `;
 }
 
-async function hasExistingSlug(slug) {
+async function hasExistingSlug(slug: string): Promise<boolean> {
   const postDirs = await PostDirectoryUtil.findPostDirectories(postsRoot);
 
   for (const existingDir of postDirs) {
@@ -79,5 +81,3 @@ async function hasExistingSlug(slug) {
 
   return false;
 }
-
-await main();

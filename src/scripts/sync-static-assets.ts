@@ -1,11 +1,13 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import process from 'node:process';
-import { PostDirectoryUtil } from './lib/post-directory-util.mjs';
+import { PostDirectoryUtil } from '../lib/shared/post-directory-util';
 
 const root = process.cwd();
 const postsRoot = path.join(root, 'content/posts');
 const staticRoot = path.join(root, 'static');
+
+await main();
 
 async function main() {
   const postDirs = await PostDirectoryUtil.findPostDirectories(postsRoot);
@@ -21,12 +23,10 @@ async function main() {
         await fs.rm(target, { recursive: true, force: true });
         await fs.cp(source, target, { recursive: true });
       } catch (error) {
-        if (error?.code !== 'ENOENT') {
+        if ((error as NodeJS.ErrnoException).code !== 'ENOENT') {
           throw error;
         }
       }
     })
   );
 }
-
-await main();

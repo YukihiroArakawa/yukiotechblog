@@ -1,6 +1,11 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { FileSystemUtil } from '$lib/server/file-system-util';
+import matter from 'gray-matter';
+import { FileSystemUtil } from './file-system-util';
+
+type Frontmatter = {
+  slug?: string;
+};
 
 export class PostDirectoryUtil {
   static async findPostDirectories(rootDir: string): Promise<string[]> {
@@ -24,5 +29,15 @@ export class PostDirectoryUtil {
     }
 
     return results;
+  }
+
+  static async readFrontmatter(postDir: string): Promise<Record<string, unknown>> {
+    const indexPath = path.join(postDir, 'index.md');
+    const parsed = matter(await fs.readFile(indexPath, 'utf8'));
+    return parsed.data;
+  }
+
+  static resolveSlug(postDir: string, frontmatter: Record<string, unknown>): string {
+    return (frontmatter as Frontmatter).slug || path.basename(postDir);
   }
 }

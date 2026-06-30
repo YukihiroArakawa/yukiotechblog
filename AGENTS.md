@@ -83,7 +83,7 @@ compatibility_date = "2026-06-27"
 - frontmatter を読み取り、Markdown を HTML に変換して配信する
 - `date` から月ディレクトリ `yyyyMM` を決める
 - `date` を解決できない記事は一時的に `content/posts/unclassified/` に退避し、公開前に正しい月ディレクトリへ戻す
-- 画像は `scripts/sync-static-assets.mjs` で `static/<slug>/images/` に同期する
+- 画像は `src/scripts/sync-static-assets.ts` で `static/<slug>/images/` に同期する
 
 ## Local Workflow
 

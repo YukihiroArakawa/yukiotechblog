@@ -4,7 +4,7 @@ import process from 'node:process';
 import matter from 'gray-matter';
 import hljs from 'highlight.js';
 import MarkdownIt from 'markdown-it';
-import { PostDirectoryUtil } from '$lib/server/post-directory-util';
+import { PostDirectoryUtil } from '$lib/shared/post-directory-util';
 import { PostVisibilityPolicy } from '$lib/server/post-visibility-policy';
 
 const postsRoot = path.join(process.cwd(), 'content/posts');

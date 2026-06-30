@@ -1,11 +1,11 @@
 export class PostDateUtil {
-  static currentDateInTokyo() {
+  static currentDateInTokyo(): string {
     return new Intl.DateTimeFormat('en-CA', {
       timeZone: 'Asia/Tokyo'
     }).format(new Date());
   }
 
-  static deriveMonthDirectory(dateValue) {
+  static deriveMonthDirectory(dateValue: string | Date | undefined): string | undefined {
     if (dateValue instanceof Date) {
       return this.formatMonth(dateValue.getUTCFullYear(), dateValue.getUTCMonth() + 1);
     }
@@ -21,7 +21,7 @@ export class PostDateUtil {
     return undefined;
   }
 
-  static formatMonth(year, month) {
+  static formatMonth(year: number, month: number): string {
     return `${year}${String(month).padStart(2, '0')}`;
   }
 }

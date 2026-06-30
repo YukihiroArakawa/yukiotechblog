@@ -10,7 +10,7 @@ default:
 
 # Start the local development server
 dev:
-    node scripts/sync-static-assets.mjs
+    pnpm exec node --import tsx src/scripts/sync-static-assets.ts
     pnpm exec vite dev --host 127.0.0.1
 
 # Run ESLint
@@ -52,12 +52,12 @@ format:
 
 # Build the static site
 build:
-    node scripts/sync-static-assets.mjs
+    pnpm exec node --import tsx src/scripts/sync-static-assets.ts
     pnpm exec vite build
 
 # Create a new post template
 new-post slug:
-    node scripts/create-post-template.mjs {{slug}}
+    pnpm exec node --import tsx src/scripts/create-post-template.ts {{slug}}
 
 # Preview the production build
 preview:

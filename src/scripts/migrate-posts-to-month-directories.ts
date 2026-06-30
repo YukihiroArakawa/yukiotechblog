@@ -1,9 +1,9 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import process from 'node:process';
-import { FileSystemUtil } from './lib/file-system-util.mjs';
-import { PostDateUtil } from './lib/post-date-util.mjs';
-import { PostDirectoryUtil } from './lib/post-directory-util.mjs';
+import { FileSystemUtil } from '../lib/shared/file-system-util';
+import { PostDateUtil } from '../lib/shared/post-date-util';
+import { PostDirectoryUtil } from '../lib/shared/post-directory-util';
 
 const root = process.cwd();
 const postsRoot = path.join(root, 'content/posts');
@@ -17,7 +17,7 @@ async function main() {
     .filter((entry) => entry.isDirectory() && entry.name !== unclassifiedDirName)
     .map((entry) => entry.name)
     .sort();
-  const seenSlugs = new Map();
+  const seenSlugs = new Map<string, string>();
 
   for (const dirName of postDirs) {
     const currentDir = path.join(postsRoot, dirName);
@@ -36,7 +36,9 @@ async function main() {
     }
 
     seenSlugs.set(slug, dirName);
-    const monthDir = PostDateUtil.deriveMonthDirectory(frontmatter.date);
+    const monthDir = PostDateUtil.deriveMonthDirectory(
+      frontmatter.date as string | Date | undefined
+    );
     const targetParent = path.join(postsRoot, monthDir ?? unclassifiedDirName);
     const targetDir = path.join(targetParent, dirName);
 
