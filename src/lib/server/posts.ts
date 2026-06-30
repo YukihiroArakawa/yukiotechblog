@@ -4,6 +4,7 @@ import process from 'node:process';
 import matter from 'gray-matter';
 import hljs from 'highlight.js';
 import MarkdownIt from 'markdown-it';
+import { PostDirectoryUtil } from '$lib/server/post-directory-util';
 import { PostVisibilityPolicy } from '$lib/server/post-visibility-policy';
 
 const postsRoot = path.join(process.cwd(), 'content/posts');
@@ -55,23 +56,14 @@ type Frontmatter = {
   slug?: string;
 };
 
-export async function listPosts(): Promise<PostSummary[]> {
-  const dirs = await fs.readdir(postsRoot, { withFileTypes: true });
-  const posts = await Promise.all(
-    dirs
-      .filter((dir) => dir.isDirectory())
-      .map(async (dir) => {
-        try {
-          return await readPostSummary(dir.name);
-        } catch {
-          return undefined;
-        }
-      })
-  );
+type ParsedPost = ReturnType<typeof parseMarkdown> & {
+  dirPath: string;
+};
 
-  return posts
-    .filter((post): post is PostSummary => Boolean(post))
-    .sort((a, b) => b.date.localeCompare(a.date));
+export async function listPosts(): Promise<PostSummary[]> {
+  const posts = await listParsedPosts();
+
+  return posts.map(summaryFromParsed).sort((a, b) => b.date.localeCompare(a.date));
 }
 
 export async function listCategories(): Promise<CategorySummary[]> {
@@ -101,11 +93,11 @@ export async function listPostsByCategory(categorySlugParam: string): Promise<Po
 }
 
 export async function readPost(slug: string): Promise<Post> {
-  const source = await readMarkdown(slug);
-  const parsed = parseMarkdown(slug, source);
+  const posts = await listParsedPosts();
+  const parsed = posts.find((post) => post.slug === slug);
 
-  if (PostVisibilityPolicy.isDraft(parsed.data.title)) {
-    throw new Error(`Draft post is not published: ${slug}`);
+  if (!parsed) {
+    throw new Error(`Post not found: ${slug}`);
   }
 
   const html = md.render(rewriteImageLinks(parsed.content, parsed.slug));
@@ -116,19 +108,24 @@ export async function readPost(slug: string): Promise<Post> {
   };
 }
 
-async function readPostSummary(dirName: string): Promise<PostSummary> {
-  const source = await readMarkdown(dirName);
-  const parsed = parseMarkdown(dirName, source);
+async function listParsedPosts(): Promise<ParsedPost[]> {
+  const dirPaths = await PostDirectoryUtil.findPostDirectories(postsRoot);
+  const posts = await Promise.all(dirPaths.map((dirPath) => readParsedPost(dirPath)));
+  const publishedPosts = posts.filter((post) => !PostVisibilityPolicy.isDraft(post.data.title));
 
-  if (PostVisibilityPolicy.isDraft(parsed.data.title)) {
-    throw new Error(`Draft post is not published: ${dirName}`);
-  }
+  ensureUniqueSlugs(publishedPosts);
 
-  return summaryFromParsed(parsed);
+  return publishedPosts;
 }
 
-async function readMarkdown(dirName: string): Promise<string> {
-  return fs.readFile(path.join(postsRoot, dirName, 'index.md'), 'utf8');
+async function readParsedPost(dirPath: string): Promise<ParsedPost> {
+  const source = await fs.readFile(path.join(dirPath, 'index.md'), 'utf8');
+  const dirName = path.basename(dirPath);
+
+  return {
+    ...parseMarkdown(dirName, source),
+    dirPath
+  };
 }
 
 function parseMarkdown(dirName: string, source: string) {
@@ -144,7 +141,7 @@ function parseMarkdown(dirName: string, source: string) {
   };
 }
 
-function summaryFromParsed(parsed: ReturnType<typeof parseMarkdown>): PostSummary {
+function summaryFromParsed(parsed: ParsedPost): PostSummary {
   return {
     slug: parsed.slug,
     title: parsed.data.title || parsed.slug,
@@ -152,6 +149,20 @@ function summaryFromParsed(parsed: ReturnType<typeof parseMarkdown>): PostSummar
     categories: parsed.data.categories || [],
     excerpt: excerpt(parsed.content)
   };
+}
+
+function ensureUniqueSlugs(posts: ParsedPost[]): void {
+  const seen = new Map<string, string>();
+
+  for (const post of posts) {
+    const existing = seen.get(post.slug);
+
+    if (existing) {
+      throw new Error(`Duplicate slug found: ${post.slug} (${existing}, ${post.dirPath})`);
+    }
+
+    seen.set(post.slug, post.dirPath);
+  }
 }
 
 function normalizeDate(date: Frontmatter['date']): string {

@@ -79,9 +79,11 @@ compatibility_date = "2026-06-27"
 ## Content Architecture
 
 - 記事データは `content/posts/` に置く
-- 各記事は記事ディレクトリ単位で管理し、`index.md` と `images/` を持つ
+- 各記事は `content/posts/yyyyMM/<slug>/` の記事ディレクトリ単位で管理し、`index.md` と `images/` を持つ
 - frontmatter を読み取り、Markdown を HTML に変換して配信する
-- 画像は `scripts/sync-static-assets.mjs` で `static/posts/` に同期する
+- `date` から月ディレクトリ `yyyyMM` を決める
+- `date` を解決できない記事は一時的に `content/posts/unclassified/` に退避し、公開前に正しい月ディレクトリへ戻す
+- 画像は `scripts/sync-static-assets.mjs` で `static/<slug>/images/` に同期する
 
 ## Local Workflow
 
