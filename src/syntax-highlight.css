@@ -34,7 +34,7 @@
   color: #9a6700;
 }
 
-.prose .hljs-built_in,
+.prose [class~='hljs-built_in'],
 .prose .hljs-function,
 .prose .hljs-params,
 .prose .hljs-attr {
@@ -82,7 +82,7 @@
     color: #e3b341;
   }
 
-  .prose .hljs-built_in,
+  .prose [class~='hljs-built_in'],
   .prose .hljs-function,
   .prose .hljs-params,
   .prose .hljs-attr {

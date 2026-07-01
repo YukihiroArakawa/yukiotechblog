@@ -17,6 +17,14 @@ dev:
 lint:
     pnpm exec eslint --cache .
 
+# Run Stylelint
+stylelint:
+    pnpm exec stylelint "src/**/*.{css,svelte}"
+
+# Fix Stylelint issues where possible
+stylelint-fix:
+    pnpm exec stylelint "src/**/*.{css,svelte}" --fix
+
 # Fix ESLint issues where possible
 lint-fix:
     pnpm exec eslint --cache . --fix
@@ -40,6 +48,7 @@ sort-package-json:
 # Run all lightweight checks
 check:
     just lint
+    just stylelint
     just format-check
     just typecheck
     just typos
@@ -47,6 +56,7 @@ check:
 # Format files
 format:
     pnpm exec prettier --write .
+    just stylelint-fix
     just lint-fix
     just sort-package-json
 
