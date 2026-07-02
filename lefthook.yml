@@ -9,9 +9,6 @@ pre-commit:
       run: just typecheck
     typos:
       run: just typos
-
-pre-push:
-  commands:
     build:
       run: just build
 
