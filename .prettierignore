@@ -1,5 +1,6 @@
 .direnv/
 .svelte-kit/
+.wrangler/
 build/
 dist/
 content/posts/

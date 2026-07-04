@@ -37,10 +37,19 @@
               pkgs.svelte-language-server
               pkgs.typos
               pkgs.typescript-language-server
+            ] ++ pkgs.lib.optionals pkgs.stdenv.isLinux [
+              pkgs.patchelf
             ];
 
             shellHook = ''
               echo "yukiotechblog dev shell: node $(node --version), pnpm $(pnpm --version)"
+
+              ${pkgs.lib.optionalString pkgs.stdenv.isLinux ''
+                # Wrangler launches npm's workerd binary, which needs an explicit
+                # dynamic linker path on NixOS.
+                export NIX_LD="${pkgs.stdenv.cc.bintools.dynamicLinker}"
+                export NIX_LD_LIBRARY_PATH="${pkgs.lib.makeLibraryPath [ pkgs.stdenv.cc.cc ]}"
+              ''}
 
               if [ -f package.json ] && [ -f pnpm-lock.yaml ]; then
                 if [ ! -f node_modules/.pnpm/lock.yaml ] || [ pnpm-lock.yaml -nt node_modules/.pnpm/lock.yaml ]; then

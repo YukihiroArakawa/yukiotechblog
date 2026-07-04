@@ -6,7 +6,15 @@ import ts from 'typescript-eslint';
 
 export default [
   {
-    ignores: ['.direnv/', '.svelte-kit/', 'build/', 'dist/', 'node_modules/', 'static/posts/']
+    ignores: [
+      '.direnv/',
+      '.svelte-kit/',
+      '.wrangler/',
+      'build/',
+      'dist/',
+      'node_modules/',
+      'static/posts/'
+    ]
   },
   js.configs.recommended,
   ...ts.configs.recommended,

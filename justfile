@@ -73,6 +73,30 @@ new-post slug:
 preview:
     pnpm exec vite preview --host 127.0.0.1
 
+# Patch npm's workerd binary so Wrangler can run it on NixOS
+patch-workerd-nixos:
+    #!/usr/bin/env bash
+    set -euo pipefail
+
+    # Wrangler resolves workerd from its npm dependency. Patch that binary with
+    # Nix's dynamic linker so `wrangler pages dev` works on NixOS.
+    workerd_bin="$(
+      pnpm exec node -e "const wrangler=require.resolve('wrangler'); const {createRequire}=require('node:module'); const req=createRequire(wrangler); console.log(req('workerd').default)"
+    )"
+
+    if [ -z "${NIX_LD:-}" ] || [ -z "${NIX_LD_LIBRARY_PATH:-}" ]; then
+      echo "NIX_LD and NIX_LD_LIBRARY_PATH are required. Run this inside nix develop or direnv." >&2
+      exit 1
+    fi
+
+    patchelf --set-interpreter "$NIX_LD" --set-rpath "$NIX_LD_LIBRARY_PATH" "$workerd_bin"
+
+# Emulate Cloudflare Pages locally with the built output
+pages-dev:
+    just build
+    just patch-workerd-nixos
+    pnpm exec wrangler pages dev build --ip 127.0.0.1
+
 # Log in to Cloudflare with Wrangler
 cloudflare-login:
     pnpm exec wrangler login
