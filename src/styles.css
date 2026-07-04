@@ -210,7 +210,10 @@ h1 {
 }
 
 @media (width <= 700px) {
-  .site-header,
+  .site-header {
+    gap: 16px;
+  }
+
   .post-row a {
     display: block;
   }
