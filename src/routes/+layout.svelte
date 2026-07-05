@@ -1,5 +1,6 @@
 <script lang="ts">
   import { resolve } from '$app/paths';
+  import '../article-table.css';
   import '../header-social.css';
   import '../syntax-highlight.css';
   import '../styles.css';
