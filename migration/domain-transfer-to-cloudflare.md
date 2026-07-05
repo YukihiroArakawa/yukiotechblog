@@ -9,11 +9,38 @@
 - Target registrar: Cloudflare Registrar
 - Related inventory: `migration/domain-dns-inventory.md`
 
+## Background
+
+- ブログをCloudflare Pages上で運用するようになったため、DNS、Pages、RegistrarをCloudflareへ寄せて管理箇所を減らしたい
+- お名前.comから届くセキュリティ診断メールが運用上のノイズになっている
+  - 明示的に依頼した覚えのない診断結果が送られてくる点に違和感がある
+- お名前.comを積極的に使い続けたいと思えるだけの信頼感が薄くなっている
+  - 例: ドメイン販売画面などで、対象ドメインが過去にどの業界・用途で使われていたかが分かる形で表示されるケースがあり、悪用リスクやプライバシー面の懸念を感じる
+    - 失効した浅田真央の公式サイトをアフィリエイトサイトにという用途を提示してドメインオークションページに表示している. https://x.com/yamanguco/status/2071590293053616278?s=20
+- 勝手に使う予定のないサーバーも契約させようとしてくる
+  - https://x.com/leon_devops/status/2068882292500807894?s=20
+- 管理画面が複雑でわかりにくい.
+- オプションを解除する画面操作がわかりにくい。ドメインプロテクションの解除を申請する際に「上記ドメイン名のドメインプロテクションが完了した事をお知らせいたします。[オプション情報]ドメインプロテクション...........：無」と表示される。
+- Cloudflare Registrarは原価ベースの価格体系で、現在のお名前.comの年間費用より安くなる見込みがある
+
 ## Goal
 
 - ドメインのレジストラをお名前.comからCloudflare Registrarへ移管する
 - DNSの管理元をCloudflareに統一する
 - Cloudflare Pagesで公開中の `https://yukiotechblog.com/` を止めない
+
+## Work Log
+
+作業時刻は JST です。このメモは会話中の確認時刻、HTTP応答ヘッダー、受信メール時刻をもとにした概算です。
+
+| Phase                                   | Start            | End              | Notes                                                           |
+| --------------------------------------- | ---------------- | ---------------- | --------------------------------------------------------------- |
+| Phase 1: DNS Records Backup             | 2026-07-05 16:38 | 2026-07-05 16:47 | 公開DNS、apex HTTP 200、`www` HTTP 522、メール設定を確認        |
+| Phase 2: Activate Domain On Cloudflare  | 2026-07-05 16:51 | 2026-07-05 16:54 | Cloudflare NS、DNSSEC無効、apex HTTP 200を確認                  |
+| Phase 3: Prepare Transfer At Onamae.com | 2026-07-05 16:55 | 2026-07-05 17:14 | AuthCode取得、ドメインプロテクション解除、Whois情報公開代行解除 |
+| Phase 4: Start Transfer At Cloudflare   | 2026-07-05 17:14 | 2026-07-05 17:20 | CloudflareでAuthCode入力、決済、transfer request送信            |
+| Phase 5: Approve Transfer               | 2026-07-05 17:20 | 2026-07-05 17:42 | お名前.comの承認申請メールを承認し、Cloudflareの完了通知を受信  |
+| Phase 6: Post-Transfer Verification     | 2026-07-05 17:44 | 2026-07-05 17:45 | RDAP、NS、apex HTTP 200を確認                                   |
 
 ## Preconditions
 
@@ -38,7 +65,7 @@
 - [x] Cloudflare Pages向けのレコードを確認する
   - `https://yukiotechblog.com/` はHTTP 200
   - `https://yukiotechblog.pages.dev/` はHTTP 200
-- [ ] `www` の扱いを確認する
+- [x] `www` の扱いを確認する
   - `www.yukiotechblog.com` は名前解決されるが、`https://www.yukiotechblog.com/` はHTTP 522
   - 方針: `https://www.yukiotechblog.com/*` は `https://yukiotechblog.com/*` へ301リダイレクトする
   - 対応はドメイン移管後に保留する
@@ -46,6 +73,7 @@
   - Bulk Redirectsで preserve query string / subpath matching / preserve path suffix を有効にする
   - Cloudflare DNSで `www` を proxied record として用意する
   - 設定後に `curl --head -i https://www.yukiotechblog.com/` で `301` と `location: https://yukiotechblog.com/` を確認する
+  - あとまわし
 - [x] メールを使っている場合はMX/TXT/SPF/DKIM/DMARCを確認する
   - SPF TXTは存在する
   - MXは `_dc-mx.48ea0888fd54.yukiotechblog.com.` を指している
@@ -77,7 +105,8 @@ Cloudflare Registrarへ移管する前に、Cloudflare上でドメインがActiv
   - `dig` がローカル環境になかったため `host -t NS yukiotechblog.com` で代替確認
 - [x] `https://yukiotechblog.com/` が表示できることを確認する
   - `curl -I https://yukiotechblog.com/` はHTTP 200
-- [ ] `https://www.yukiotechblog.com/` の挙動を確認する
+- [x] `https://www.yukiotechblog.com/` の挙動を確認する
+  - 一旦後回しに
   - HTTP 522のため、ドメイン移管後にBulk Redirectsでapexへ301リダイレクトする
 
 ## Phase 3: Prepare Transfer At Onamae.com
@@ -101,8 +130,6 @@ Cloudflare Registrarへ移管する前に、Cloudflare上でドメインがActiv
 - [x] AuthCode / EPP code / 認証コードを取得する
 - [x] AuthCodeを安全な一時メモに控える
   - AuthCode自体はリポジトリやチャットに残さない
-- [ ] ドメインの登録・更新料金に未精算がないことを確認する
-- [ ] 更新手続き、登録者名義変更などの各種手続き中でないことを確認する
 
 ## Phase 4: Start Transfer At Cloudflare
 
@@ -123,28 +150,42 @@ Cloudflare Registrarへ移管する前に、Cloudflare上でドメインがActiv
 
 ## Phase 5: Approve Transfer
 
-- [ ] お名前.comから移管確認メールが来ていないか確認する
+- [x] お名前.comから移管確認メールが来ていないか確認する
   - 公式ヘルプ上の件名: `【重要】トランスファー申請に関する確認のご連絡`
   - `.com` は承認メール送信日時から96時間、つまり4日後までに承認が必要
   - 承認メールはWhois情報の登録者情報宛に送信される
-- [ ] Cloudflareから確認メールが来ていないか確認する
-- [ ] 承認が必要なメールまたはお名前.com Navi上の操作があれば承認する
-- [ ] Cloudflare Dashboardで status を定期的に確認する
-- [ ] 5営業日程度待っても進まない場合は、お名前.com側のロックとAuthCodeを再確認する
+- [x] Cloudflareから確認メールが来ていないか確認する
+  - `Domain Transfer Requested` を受信済み
+- [x] 承認が必要なメールまたはお名前.com Navi上の操作があれば承認する
+  - 2026-07-05: お名前.comからの承認申請メールを承認済み
+- [x] Cloudflare Dashboardで status を定期的に確認する
+  - 2026-07-05: `Domain Transfer Completed` メールを受信
+- [x] 5営業日程度待っても進まない場合は、お名前.com側のロックとAuthCodeを再確認する
+  - 同日中に完了したため追加確認不要
   - お名前.com公式ヘルプ上は移管完了まで1、2週間前後かかる場合がある
 
 ## Phase 6: Post-Transfer Verification
 
-- [ ] Cloudflare Registrarに `yukiotechblog.com` が表示される
-- [ ] Cloudflare Registrarで自動更新設定を確認する
-- [ ] 登録者情報が正しいことを確認する
-- [ ] Cloudflare DNSのレコードが維持されていることを確認する
-- [ ] `https://yukiotechblog.com/` が表示できる
-- [ ] `https://www.yukiotechblog.com/` の挙動が期待通り
-- [ ] Cloudflare Pagesの custom domain が正常
-- [ ] メールを使っている場合は送受信を確認する
-- [ ] 必要ならCloudflare側でDNSSECを有効化する
-- [ ] お名前.com側で不要になった自動更新や関連設定を確認する
+- [x] Cloudflare Registrarに `yukiotechblog.com` が表示される
+  - Public RDAPの registrar は Cloudflare, Inc.
+  - Registry expiry date は 2028-03-02
+- [x] Cloudflare Registrarで自動更新設定を確認する
+  - Auto renew は有効
+- [x] 登録者情報が正しいことを確認する
+- [x] Cloudflare DNSのレコードが維持されていることを確認する
+  - NSは `bill.ns.cloudflare.com` / `kristin.ns.cloudflare.com`
+- [x] `https://yukiotechblog.com/` が表示できる
+  - `curl -I https://yukiotechblog.com/` はHTTP 200
+- [x] Cloudflare Pagesの custom domain が正常
+  - apex domain がCloudflare経由でHTTP 200
+- [x] メールを使っている場合は送受信を確認する
+  - `@yukiotechblog.com` のメールは現在使っていないため確認不要
+- [x] 必要ならCloudflare側でDNSSECを有効化する
+  - Immediate post-transfer taskではなく、future workとして扱う
+  - Cloudflare RegistrarとCloudflare DNSに統一済みのため、有効化する場合の運用リスクは比較的小さい
+  - 一旦後回しで
+- [x] お名前.com側で不要になった自動更新や関連設定を確認する
+  - お名前.com側のドメイン契約は0件になっている
 
 ## Rollback / Safety Notes
 

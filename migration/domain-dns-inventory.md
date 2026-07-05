@@ -4,9 +4,9 @@
 
 - Checked on: 2026-07-05
 - Domain: `yukiotechblog.com`
-- Registrar: GMO Internet Group, Inc. d/b/a Onamae.com
-- Registrar WHOIS server: `whois.discount-domain.com`
-- Registry expiry date: 2027-03-02
+- Registrar: Cloudflare, Inc.
+- Registrar RDAP server: `https://rdap.cloudflare.com/rdap/v1/domain/YUKIOTECHBLOG.COM`
+- Registry expiry date: 2028-03-02
 - Current authoritative nameservers:
   - `bill.ns.cloudflare.com`
   - `kristin.ns.cloudflare.com`
@@ -43,7 +43,7 @@ The following record types were checked and returned no values:
 
 ## Notes
 
-- Public Whois indicates the registrar is Onamae.com, not Sakura Internet.
+- Public RDAP indicates the registrar is Cloudflare, Inc. as of 2026-07-05.
 - Current authoritative nameservers are already Cloudflare nameservers.
 - `https://yukiotechblog.com/` returns HTTP 200 through Cloudflare.
 - `https://yukiotechblog.pages.dev/` returns HTTP 200.
@@ -51,6 +51,7 @@ The following record types were checked and returned no values:
 - Public apex A/AAAA records are Cloudflare edge addresses, not origin server addresses.
 - The MX target currently resolves to `yukiotechblog.pages.dev`; confirm whether inbound mail for this domain is actually needed before changing registrar settings.
 - DMARC is not configured.
+- RDAP status includes `client transfer prohibited`, which is expected after transfer when registrar lock is enabled.
 
 ## Cloudflare Assigned Nameservers
 
