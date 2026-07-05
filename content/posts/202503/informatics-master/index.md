@@ -2,6 +2,7 @@
 title: "文系学部からでも進学しやすい情報系の大学院について"
 date: 2025-03-19
 coverImage: "Screenshot-from-2025-03-23-15-38-10.png"
+categories: ["career"]
 slug: "informatics-master"
 type: "post"
 ---
