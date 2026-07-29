@@ -1,5 +1,5 @@
 ---
-title: "[Vocabulary/Transcript] Best Way To Manage Projext Dependencies | Nix Shells"
+title: "[Transcript/Vocabulary] Best Way To Manage Projext Dependencies | Nix Shells"
 date: 2026-07-29
 categories: ["english-learning", "nix"]
 slug: "english-notes-best-way-to-manage-projext-dependencies-nix-shells"
