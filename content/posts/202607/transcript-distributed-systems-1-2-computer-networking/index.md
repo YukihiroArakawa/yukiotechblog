@@ -22,8 +22,8 @@ section i will talk a bit more about the relationship between distributed system
 
 | Word or expression | IPA | Simple English meaning | Example |
 | --- | --- | --- | --- |
-| node | /nˈo‍ʊd/ | A computer or device that participates in a network. | The lecture uses node when explaining the topic. |
-| data center | /dˈe‍ɪɾə sˈɛntɚ/ | A building that contains many computers and network equipment. | The lecture uses data center when explaining the topic. |
+| node | /nˈo‍ʊd/ | A computer or device that participates in a network. | Each node stores a copy of the configuration data. |
+| data center | /dˈe‍ɪɾə sˈɛntɚ/ | A building that contains many computers and network equipment. | The company placed servers in two separate data centers. |
 
 #### Phrases
 
@@ -39,8 +39,8 @@ uh if you're sitting in a coffee shop you will probably be using the wi-fi there
 
 | Word or expression | IPA | Simple English meaning | Example |
 | --- | --- | --- | --- |
-| cellular data | /sˈɛljʊlɚ dˈe‍ɪɾə/ | Internet access provided through a mobile phone network. | The lecture uses cellular data when explaining the topic. |
-| connect directly | /kənˈɛkt dᵻɹˈɛktli/ | Join a network without another local network in between. | The lecture uses connect directly when explaining the topic. |
+| cellular data | /sˈɛljʊlɚ dˈe‍ɪɾə/ | Internet access provided through a mobile phone network. | The phone switched to cellular data when the Wi-Fi failed. |
+| connect directly | /kənˈɛkt dᵻɹˈɛktli/ | Join a network without another local network in between. | Two laptops can connect directly over a local cable. |
 
 #### Phrases
 
@@ -56,8 +56,8 @@ you have is a very large amount of data that you want to send to somebody else m
 
 | Word or expression | IPA | Simple English meaning | Example |
 | --- | --- | --- | --- |
-| transfer | /tɹˈænsfɜː/ | Move data from one place or system to another. | The lecture uses transfer when explaining the topic. |
-| bandwidth | /bˈændwɪdθ/ | The amount of data a network connection can carry in a period of time. | The lecture uses bandwidth when explaining the topic. |
+| transfer | /tɹˈænsfɜː/ | Move data from one place or system to another. | The client began a file transfer after authenticating with the server. |
+| bandwidth | /bˈændwɪdθ/ | The amount of data a network connection can carry in a period of time. | Video calls need more bandwidth than short text messages. |
 
 #### Phrases
 
@@ -73,8 +73,8 @@ a day or a couple of days for the data to arrive but it is also quite a high ban
 
 | Word or expression | IPA | Simple English meaning | Example |
 | --- | --- | --- | --- |
-| latency | /lˈe‍ɪtənsi/ | The delay before data reaches its destination. | The lecture uses latency when explaining the topic. |
-| messaging channel | /mˈɛsɪd‍ʒɪŋ t‍ʃˈænə‍l/ | A way for two systems to send data to each other. | The lecture uses messaging channel when explaining the topic. |
+| latency | /lˈe‍ɪtənsi/ | The delay before data reaches its destination. | High latency made each remote request noticeably slower. |
+| messaging channel | /mˈɛsɪd‍ʒɪŋ t‍ʃˈænə‍l/ | A way for two systems to send data to each other. | The queue provides a messaging channel between the two services. |
 
 #### Phrases
 
@@ -90,8 +90,8 @@ probably take a day or a couple of days but still you know it's just another net
 
 | Word or expression | IPA | Simple English meaning | Example |
 | --- | --- | --- | --- |
-| megabit per second | /mˈɛɡəbˌɪt pɜː sˈɛkənd/ | A unit for measuring data-transfer speed. | The lecture uses megabit per second when explaining the topic. |
-| signal | /sˈɪɡnə‍l/ | A transmitted wave that carries information. | The lecture uses signal when explaining the topic. |
+| megabit per second | /mˈɛɡəbˌɪt pɜː sˈɛkənd/ | A unit for measuring data-transfer speed. | The connection delivered 100 megabits per second during the test. |
+| signal | /sˈɪɡnə‍l/ | A transmitted wave that carries information. | The router retransmitted the signal after detecting interference. |
 
 #### Phrases
 
@@ -107,8 +107,8 @@ i will now like to show you an example of one concrete distributed system which 
 
 | Word or expression | IPA | Simple English meaning | Example |
 | --- | --- | --- | --- |
-| distributed systems lens | /dˈɪstɹɪbjˌuːɾᵻd sˈɪstəmz lˈɛnz/ | A way of examining something using distributed-systems ideas. | The lecture uses distributed systems lens when explaining the topic. |
-| website | /wˈɛbsa‍ɪt/ | A collection of web pages under one address. | The lecture uses website when explaining the topic. |
+| distributed systems lens | /dˈɪstɹɪbjˌuːɾᵻd sˈɪstəmz lˈɛnz/ | A way of examining something using distributed-systems ideas. | Through a distributed systems lens, a web page is a set of cooperating services. |
+| website | /wˈɛbsa‍ɪt/ | A collection of web pages under one address. | The website loads images from a server in another region. |
 
 #### Phrases
 
@@ -124,8 +124,8 @@ and then from the single slash onwards is the path and so the the bit before tha
 
 | Word or expression | IPA | Simple English meaning | Example |
 | --- | --- | --- | --- |
-| path | /pˈæθ/ | The part of a URL that identifies a resource on a server. | The lecture uses path when explaining the topic. |
-| destination | /dˌɛstɪnˈe‍ɪʃən/ | The place where a message is sent. | The lecture uses destination when explaining the topic. |
+| path | /pˈæθ/ | The part of a URL that identifies a resource on a server. | The path `/users/42` identifies one resource on the API server. |
+| destination | /dˌɛstɪnˈe‍ɪʃən/ | The place where a message is sent. | The router chose the next hop toward the packet’s destination. |
 
 #### Phrases
 
@@ -141,8 +141,8 @@ browser looks like here i've loaded the course web page and i can scroll up and 
 
 | Word or expression | IPA | Simple English meaning | Example |
 | --- | --- | --- | --- |
-| network capture | /nˈɛtwɜːk kˈæpt‍ʃɚ/ | A recording of data sent and received over a network. | The lecture uses network capture when explaining the topic. |
-| Wireshark | /wˈa‍ɪ‍ɚʃɑː‍ɹk/ | A program used to inspect network traffic. | The lecture uses Wireshark when explaining the topic. |
+| network capture | /nˈɛtwɜːk kˈæpt‍ʃɚ/ | A recording of data sent and received over a network. | The engineer used a network capture to inspect failed requests. |
+| Wireshark | /wˈa‍ɪ‍ɚʃɑː‍ɹk/ | A program used to inspect network traffic. | Wireshark showed that the client sent the wrong DNS query. |
 
 #### Phrases
 
@@ -158,7 +158,7 @@ um you can see a bunch of information like the user agent here for example is es
 
 | Word or expression | IPA | Simple English meaning | Example |
 | --- | --- | --- | --- |
-| header | /hˈɛdɚ/ | Extra information sent with a network request or response. | The lecture uses header when explaining the topic. |
+| header | /hˈɛdɚ/ | Extra information sent with a network request or response. | The HTTP header tells the server which content type the client accepts. |
 
 #### Phrases
 
@@ -174,7 +174,7 @@ so what we have is this very simple request response messaging protocol at the c
 
 | Word or expression | IPA | Simple English meaning | Example |
 | --- | --- | --- | --- |
-| conceptual level | /kənsˈɛpt‍ʃuːə‍l lˈɛvə‍l/ | A high-level way of thinking about a system. | The lecture uses conceptual level when explaining the topic. |
+| conceptual level | /kənsˈɛpt‍ʃuːə‍l lˈɛvə‍l/ | A high-level way of thinking about a system. | At a conceptual level, a request is simply a message and a reply. |
 
 #### Phrases
 
@@ -190,7 +190,7 @@ is a single network packet and so here you can see that there's a packet sent fr
 
 | Word or expression | IPA | Simple English meaning | Example |
 | --- | --- | --- | --- |
-| IP address | /ˌa‍ɪpˈiːʲ ɐdɹˈɛs/ | A number that identifies a device on an IP network. | The lecture uses IP address when explaining the topic. |
+| IP address | /ˌa‍ɪpˈiːʲ ɐdɹˈɛs/ | A number that identifies a device on an IP network. | The server uses its IP address to receive packets from the network. |
 
 #### Phrases
 
@@ -206,7 +206,7 @@ the reason that we have lots of packets is that there's a maximum size of each p
 
 | Word or expression | IPA | Simple English meaning | Example |
 | --- | --- | --- | --- |
-| bytes | /bˈa‍ɪts/ | Units used to measure digital data. | The lecture uses bytes when explaining the topic. |
+| bytes | /bˈa‍ɪts/ | Units used to measure digital data. | The file size is 500 bytes, so it fits in one small packet. |
 
 #### Phrases
 
@@ -222,7 +222,7 @@ deliver them and then on the recipient side tcp puts all of the network packets 
 
 | Word or expression | IPA | Simple English meaning | Example |
 | --- | --- | --- | --- |
-| recipient | /ɹᵻsˈɪpi‍ənt/ | A person or system that receives something. | The lecture uses recipient when explaining the topic. |
+| recipient | /ɹᵻsˈɪpi‍ənt/ | A person or system that receives something. | The recipient node sends an acknowledgement after receiving the message. |
 
 #### Phrases
 
@@ -238,7 +238,7 @@ in terms of network packets we just assume that we have this communication mecha
 
 | Word or expression | IPA | Simple English meaning | Example |
 | --- | --- | --- | --- |
-| assume | /ɐsˈuːm/ | Accept something as true for the purpose of reasoning. | The lecture uses assume when explaining the topic. |
+| assume | /ɐsˈuːm/ | Accept something as true for the purpose of reasoning. | Do not assume that two messages will arrive in the order sent. |
 
 #### Phrases
 

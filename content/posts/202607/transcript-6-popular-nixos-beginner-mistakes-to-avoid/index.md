@@ -22,7 +22,7 @@ whether you are new to NixOS or an experienced user we all know it is a rabbit h
 
 | Word or expression | IPA | Simple English meaning | Example |
 | --- | --- | --- | --- |
-| rabbit hole | /ɹˈæbɪt hˈo‍ʊl/ | A situation that becomes increasingly complex as you explore it. | The lecture uses rabbit hole when explaining the topic. |
+| rabbit hole | /ɹˈæbɪt hˈo‍ʊl/ | A situation that becomes increasingly complex as you explore it. | Changing one small option led her into a rabbit hole of NixOS documentation. |
 
 #### Phrases
 
@@ -38,7 +38,7 @@ not to tell you about the sponsor of today's video nordvpn I'm sure you all are 
 
 | Word or expression | IPA | Simple English meaning | Example |
 | --- | --- | --- | --- |
-| surveillance | /sɚvˈe‍ɪləns/ | Careful observation of people or activities. | The lecture uses surveillance when explaining the topic. |
+| surveillance | /sɚvˈe‍ɪləns/ | Careful observation of people or activities. | The company used surveillance software to monitor employees’ activity. |
 
 #### Phrases
 
@@ -54,7 +54,7 @@ internet traffic on your device and allowing you to connect to any of the 118 co
 
 | Word or expression | IPA | Simple English meaning | Example |
 | --- | --- | --- | --- |
-| malicious | /mɐlˈɪʃəs/ | Intended to cause harm. | The lecture uses malicious when explaining the topic. |
+| malicious | /mɐlˈɪʃəs/ | Intended to cause harm. | A malicious package tried to delete files from the user’s home directory. |
 
 #### Phrases
 
@@ -70,7 +70,7 @@ and now starting with the first dangerous mistake that I very often see beginner
 
 | Word or expression | IPA | Simple English meaning | Example |
 | --- | --- | --- | --- |
-| version control | /vˈɜːʒən kəntɹˈo‍ʊl/ | A system for recording changes to files over time. | The lecture uses version control when explaining the topic. |
+| version control | /vˈɜːʒən kəntɹˈo‍ʊl/ | A system for recording changes to files over time. | Version control let the team restore the configuration from last week. |
 
 #### Phrases
 
@@ -86,7 +86,7 @@ will also allow you to share it with others in case you ever have to ask for hel
 
 | Word or expression | IPA | Simple English meaning | Example |
 | --- | --- | --- | --- |
-| repository | /ɹᵻpˈɑːzɪtˌɔːɹi/ | A storage location for project files and their history. | The lecture uses repository when explaining the topic. |
+| repository | /ɹᵻpˈɑːzɪtˌɔːɹi/ | A storage location for project files and their history. | The package was downloaded from the official Nixpkgs repository. |
 
 #### Phrases
 
@@ -102,7 +102,7 @@ packages already present on your system and if you want to actually update those
 
 | Word or expression | IPA | Simple English meaning | Example |
 | --- | --- | --- | --- |
-| rebuild | /ɹᵻbˈɪld/ | Create a system configuration again from its definition. | The lecture uses rebuild when explaining the topic. |
+| rebuild | /ɹᵻbˈɪld/ | Create a system configuration again from its definition. | After editing configuration.nix, he ran rebuild to apply the changes. |
 
 #### Phrases
 
@@ -118,7 +118,7 @@ third mistake many new Nix users do not garbage collecting your Nix store becaus
 
 | Word or expression | IPA | Simple English meaning | Example |
 | --- | --- | --- | --- |
-| generation | /d‍ʒˌɛnɚɹˈe‍ɪʃən/ | A saved version of a NixOS system configuration. | The lecture uses generation when explaining the topic. |
+| generation | /d‍ʒˌɛnɚɹˈe‍ɪʃən/ | A saved version of a NixOS system configuration. | She selected an older generation from the boot menu after an update failed. |
 
 #### Phrases
 
@@ -134,7 +134,7 @@ updating and cleaning processes using the options you see on the screen next the
 
 | Word or expression | IPA | Simple English meaning | Example |
 | --- | --- | --- | --- |
-| garbage collect | /ɡˈɑː‍ɹbɪd‍ʒ kəlˈɛkt/ | Remove data or packages that are no longer needed. | The lecture uses garbage collect when explaining the topic. |
+| garbage collect | /ɡˈɑː‍ɹbɪd‍ʒ kəlˈɛkt/ | Remove data or packages that are no longer needed. | Run garbage collect only after confirming that old build outputs are no longer needed. |
 
 #### Phrases
 
@@ -150,7 +150,7 @@ however understanding what is and isn't a part of your configuration is crucial 
 
 | Word or expression | IPA | Simple English meaning | Example |
 | --- | --- | --- | --- |
-| declarative | /dᵻklˈæɹətˌɪv/ | Describing the desired result instead of every action. | The lecture uses declarative when explaining the topic. |
+| declarative | /dᵻklˈæɹətˌɪv/ | Describing the desired result instead of every action. | The declarative file lists the services that should run on the machine. |
 
 #### Phrases
 
@@ -166,7 +166,7 @@ performed by nix-env will also require nix-env to be undone with no easy way to 
 
 | Word or expression | IPA | Simple English meaning | Example |
 | --- | --- | --- | --- |
-| imperatively | /ɪmpˈɛɹətˌɪvli/ | By directly telling a system which actions to perform. | The lecture uses imperatively when explaining the topic. |
+| imperatively | /ɪmpˈɛɹətˌɪvli/ | By directly telling a system which actions to perform. | Installing a package imperatively changes the system without recording it in configuration.nix. |
 
 #### Phrases
 
@@ -197,7 +197,7 @@ no real advantage to having a 2,000 line monster flake with configuration.nix, h
 
 | Word or expression | IPA | Simple English meaning | Example |
 | --- | --- | --- | --- |
-| module system | /mˈɑːd‍ʒuːl sˈɪstəm/ | A way to organize a configuration into separate files. | The lecture uses module system when explaining the topic. |
+| module system | /mˈɑːd‍ʒuːl sˈɪstəm/ | A way to organize a configuration into separate files. | The module system lets a user keep networking and desktop settings in separate files. |
 
 #### Phrases
 
@@ -213,7 +213,7 @@ user try to learn everything right away you will only confuse yourself and end u
 
 | Word or expression | IPA | Simple English meaning | Example |
 | --- | --- | --- | --- |
-| overthink | /ˌo‍ʊvɚθˈɪŋk/ | Think about something more than is useful. | The lecture uses overthink when explaining the topic. |
+| overthink | /ˌo‍ʊvɚθˈɪŋk/ | Think about something more than is useful. | Do not overthink the first setup; start with a small working configuration. |
 
 #### Phrases
 
@@ -229,7 +229,7 @@ example on our Discord server I've seen many people hesitant to try out flakes b
 
 | Word or expression | IPA | Simple English meaning | Example |
 | --- | --- | --- | --- |
-| flakes | /flˈe‍ɪks/ | A Nix feature for reproducible dependency management. | The lecture uses flakes when explaining the topic. |
+| flakes | /flˈe‍ɪks/ | A Nix feature for reproducible dependency management. | Flakes pin the exact inputs used to build a development environment. |
 
 #### Phrases
 
@@ -245,7 +245,7 @@ learn flakes early but don't let the learning experience harm your productivity 
 
 | Word or expression | IPA | Simple English meaning | Example |
 | --- | --- | --- | --- |
-| FHS | /ˌɛfˌe‍ɪt‍ʃˈɛs/ | The Filesystem Hierarchy Standard used by many Linux systems. | The lecture uses FHS when explaining the topic. |
+| FHS | /ˌɛfˌe‍ɪt‍ʃˈɛs/ | The Filesystem Hierarchy Standard used by many Linux systems. | Some binary installers expect the FHS directory layout used by traditional Linux systems. |
 
 #### Phrases
 
@@ -261,7 +261,7 @@ any other Linux repo and some of them do rely on FHS for one reason or another l
 
 | Word or expression | IPA | Simple English meaning | Example |
 | --- | --- | --- | --- |
-| sandbox | /sˈændbɑːks/ | An isolated environment for running software. | The lecture uses sandbox when explaining the topic. |
+| sandbox | /sˈændbɑːks/ | An isolated environment for running software. | Nix builds packages in a sandbox so undeclared files cannot affect the result. |
 
 #### Phrases
 
@@ -277,7 +277,7 @@ Docker or drro box to run any programs like on any other drro meaning non FHS co
 
 | Word or expression | IPA | Simple English meaning | Example |
 | --- | --- | --- | --- |
-| overblown | /ˌo‍ʊvɚblˈo‍ʊn/ | Made to seem more serious or important than it is. | The lecture uses overblown when explaining the topic. |
+| overblown | /ˌo‍ʊvɚblˈo‍ʊn/ | Made to seem more serious or important than it is. | The warning sounded overblown because the issue only affected an optional feature. |
 
 #### Phrases
 
@@ -293,7 +293,7 @@ next one
 
 | Word or expression | IPA | Simple English meaning | Example |
 | --- | --- | --- | --- |
-| generous | /d‍ʒˈɛnɚɹəs/ | Willing to give more than is expected. | The lecture uses generous when explaining the topic. |
+| generous | /d‍ʒˈɛnɚɹəs/ | Willing to give more than is expected. | Use a generous disk limit when large source packages must be compiled. |
 
 #### Phrases
 
