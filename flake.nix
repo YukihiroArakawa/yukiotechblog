@@ -36,6 +36,7 @@
               pkgs.pnpm_10
               pkgs.python312
               pkgs.python312Packages.pyyaml
+              pkgs.python312Packages.pypdf
               pkgs.python312Packages.youtube-transcript-api
               pkgs.svelte-language-server
               pkgs.typos

@@ -1,0 +1,4 @@
+interface:
+  display_name: 'Source Document Post'
+  short_description: 'Create rights-aware posts from documents and articles'
+  default_prompt: 'Use $source-vocabulary-post to prepare a vocabulary post from this article or paper URL: <URL>.'
