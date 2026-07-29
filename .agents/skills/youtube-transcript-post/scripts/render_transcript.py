@@ -18,23 +18,25 @@ def main() -> None:
     args = parser.parse_args()
 
     transcript = YouTubeTranscriptApi().fetch(args.video_id, languages=[args.language])
-    captions: dict[int, list[str]] = {}
-    for snippet in transcript:
-        captions.setdefault(int(snippet.start // 60), []).append(snippet.text)
-
     article = args.post.read_text(encoding="utf-8")
-    headings = re.findall(r"^### (\d+):(\d+)–", article, flags=re.MULTILINE)
-    for minutes, seconds in headings:
-        start_seconds = int(minutes) * 60 + int(seconds)
-        body = " ".join(captions.get(start_seconds // 60, []))
+    headings = re.findall(r"^### (\d+):(\d+)–(\d+):(\d+) ", article, flags=re.MULTILINE)
+    for start_minutes, start_seconds, end_minutes, end_seconds in headings:
+        start = int(start_minutes) * 60 + int(start_seconds)
+        end = int(end_minutes) * 60 + int(end_seconds)
+        # Keep caption chunks readable without merging or dropping their words.
+        body = "\n\n".join(
+            snippet.text for snippet in transcript if start <= snippet.start < end
+        )
         if not body:
-            raise ValueError(f"No captions found for {minutes}:{seconds}")
+            raise ValueError(f"No captions found for {start_minutes}:{start_seconds}")
 
-        heading = rf"### {minutes}:{seconds}–[^\n]+"
+        heading = rf"### {start_minutes}:{start_seconds}–{end_minutes}:{end_seconds} [^\n]+"
         pattern = re.compile(rf"({heading}\n\n)(.*?)(\n\n#### Vocabulary)", re.DOTALL)
         article, replacements = pattern.subn(rf"\1{body}\3", article, count=1)
         if replacements != 1:
-            raise ValueError(f"Could not replace transcript body for {minutes}:{seconds}")
+            raise ValueError(
+                f"Could not replace transcript body for {start_minutes}:{start_seconds}"
+            )
 
     args.post.write_text(article, encoding="utf-8")
 
