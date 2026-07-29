@@ -1,7 +1,7 @@
 ---
 title: "[Transcript/Vocabulary] Distributed Systems 1.1: Introduction"
 date: 2026-07-29
-categories: ["english-learning", "distributed-systems"]
+categories: ["english-learning", "transcript", "distributed-systems"]
 slug: "distributed-systems-1-1-introduction"
 type: "post"
 ---

@@ -1,7 +1,7 @@
 ---
 title: "[Transcript/Vocabulary] 6 Popular NixOS Beginner Mistakes To Avoid"
 date: 2026-07-29
-categories: ["english-learning", "nix"]
+categories: ["english-learning", "transcript", "nix"]
 slug: "6-popular-nixos-beginner-mistakes-to-avoid"
 type: "post"
 ---

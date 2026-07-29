@@ -1,7 +1,7 @@
 ---
 title: "[Transcript/Vocabulary] Distributed Systems 1.2: Computer networking"
 date: 2026-07-29
-categories: ["english-learning", "networking"]
+categories: ["english-learning", "transcript", "networking"]
 slug: "distributed-systems-1-2-computer-networking"
 type: "post"
 ---
