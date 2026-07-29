@@ -2,7 +2,7 @@
 title: "[Transcript/Vocabulary] Distributed Systems 1.1: Introduction"
 date: 2026-07-29
 categories: ["english-learning", "transcript", "distributed-systems"]
-slug: "distributed-systems-1-1-introduction"
+slug: "transcript-distributed-systems-1-1-introduction"
 type: "post"
 ---
 
@@ -20,11 +20,11 @@ hello everybody my name is martin klepman and i'm going to be giving the next ei
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-| --- | --- |
-| concurrency | The ability for several tasks to make progress during the same time period. |
-| mutual exclusion | A rule that allows only one thread to use a shared resource at a time. |
-| address space | The range of memory addresses a process can use. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| concurrency | /kəŋkˈɜːɹənsi/ | The ability for several tasks to make progress during the same time period. | The lecture uses concurrency when explaining the topic. |
+| mutual exclusion | /mjˈuːt‍ʃuːə‍l ɛksklˈuːʒən/ | A rule that allows only one thread to use a shared resource at a time. | The lecture uses mutual exclusion when explaining the topic. |
+| address space | /ɐdɹˈɛs spˈe‍ɪs/ | The range of memory addresses a process can use. | The lecture uses address space when explaining the topic. |
 
 #### Phrases
 
@@ -39,11 +39,11 @@ this changes so in distributed systems we still have concurrency we still have m
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-| --- | --- |
-| distributed system | A group of computers that work together through a network. |
-| recipient | A person or system that receives something. |
-| entity | Something that exists separately and can be treated as one unit. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| distributed system | /dˈɪstɹɪbjˌuːɾᵻd sˈɪstəm/ | A group of computers that work together through a network. | The lecture uses distributed system when explaining the topic. |
+| recipient | /ɹᵻsˈɪpi‍ənt/ | A person or system that receives something. | The lecture uses recipient when explaining the topic. |
+| entity | /ˈɛntᵻɾi/ | Something that exists separately and can be treated as one unit. | The lecture uses entity when explaining the topic. |
 
 #### Phrases
 
@@ -58,11 +58,11 @@ definition provided by leslie lamport is that a distributed system is a system i
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-| --- | --- |
-| render | Cause something to become a particular state. |
-| computing device | A machine that can process data, such as a phone or server. |
-| coordinate | Organize people or things so they work well together. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| render | /ɹˈɛndɚ/ | Cause something to become a particular state. | The lecture uses render when explaining the topic. |
+| computing device | /kəmpjˈuːɾɪŋ dɪvˈa‍ɪs/ | A machine that can process data, such as a phone or server. | The lecture uses computing device when explaining the topic. |
+| coordinate | /ko‍ʊˈɔː‍ɹdᵻnət/ | Organize people or things so they work well together. | The lecture uses coordinate when explaining the topic. |
 
 #### Phrases
 
@@ -77,11 +77,11 @@ together and the study of distributed systems is really the study of how do we c
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-| --- | --- |
-| self-contained | Complete enough to be understood without other material. |
-| overview | A general description without every detail. |
-| applied | Focused on practical use rather than theory alone. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| self-contained | /sˈɛlfkəntˈe‍ɪnd/ | Complete enough to be understood without other material. | The lecture uses self-contained when explaining the topic. |
+| overview | /ˈo‍ʊvɚvjˌuː/ | A general description without every detail. | The lecture uses overview when explaining the topic. |
+| applied | /ɐplˈa‍ɪd/ | Focused on practical use rather than theory alone. | The lecture uses applied when explaining the topic. |
 
 #### Phrases
 
@@ -96,11 +96,11 @@ the theory as some of the other books but it's more practically oriented if you 
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-| --- | --- |
-| practitioner | A person who works professionally in a particular field. |
-| scheduling | Deciding when tasks or processes should run. |
-| relevant | Closely connected to the subject being discussed. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| practitioner | /pɹæktˈɪʃənɚ/ | A person who works professionally in a particular field. | The lecture uses practitioner when explaining the topic. |
+| scheduling | /skˈɛd‍ʒuːlɪŋ/ | Deciding when tasks or processes should run. | The lecture uses scheduling when explaining the topic. |
+| relevant | /ɹˈɛlᵻvənt/ | Closely connected to the subject being discussed. | The lecture uses relevant when explaining the topic. |
 
 #### Phrases
 
@@ -115,11 +115,11 @@ concurrent systems part of this course which really provides the link between op
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-| --- | --- |
-| protocol | A set of rules for communication between systems. |
-| mechanism | A method or system used to produce a result. |
-| sufficiently | Enough for a particular purpose. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| protocol | /pɹˈo‍ʊɾəkˌɑːl/ | A set of rules for communication between systems. | The lecture uses protocol when explaining the topic. |
+| mechanism | /mˈɛkənˌɪzəm/ | A method or system used to produce a result. | The lecture uses mechanism when explaining the topic. |
+| sufficiently | /səfˈɪʃəntli/ | Enough for a particular purpose. | The lecture uses sufficiently when explaining the topic. |
 
 #### Phrases
 
@@ -134,11 +134,11 @@ the bytes over the wire from one device to the other device so what do the netwo
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-| --- | --- |
-| protocol | A set of rules for communication between systems. |
-| flexibly | In a way that can adapt to different needs. |
-| sufficiently | Enough for a particular purpose. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| protocol | /pɹˈo‍ʊɾəkˌɑːl/ | A set of rules for communication between systems. | The lecture uses protocol when explaining the topic. |
+| flexibly | /flˈɛksᵻbli/ | In a way that can adapt to different needs. | The lecture uses flexibly when explaining the topic. |
+| sufficiently | /səfˈɪʃəntli/ | Enough for a particular purpose. | The lecture uses sufficiently when explaining the topic. |
 
 #### Phrases
 
@@ -153,11 +153,11 @@ in order to process it okay so i gave a brief definition of uh what a distribute
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-| --- | --- |
-| inherently | As a natural and permanent part of something. |
-| inevitably | In a way that cannot be avoided. |
-| distributed | Spread across more than one computer or place. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| inherently | /ɪnhˈi‍əɹəntli/ | As a natural and permanent part of something. | The lecture uses inherently when explaining the topic. |
+| inevitably | /ɪnˈɛvᵻɾəbli/ | In a way that cannot be avoided. | The lecture uses inevitably when explaining the topic. |
+| distributed | /dˈɪstɹɪbjˌuːɾᵻd/ | Spread across more than one computer or place. | The lecture uses distributed when explaining the topic. |
 
 #### Phrases
 
@@ -172,11 +172,11 @@ and the reason for this is say you have multiple computers which are each perfor
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-| --- | --- |
-| reliable | Able to work correctly and consistently. |
-| reboot | Start a computer again after restarting it. |
-| latency | The delay before data reaches its destination. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| reliable | /ɹᵻlˈa‍ɪəbə‍l/ | Able to work correctly and consistently. | The lecture uses reliable when explaining the topic. |
+| reboot | /ɹᵻbˈuːt/ | Start a computer again after restarting it. | The lecture uses reboot when explaining the topic. |
+| latency | /lˈe‍ɪtənsi/ | The delay before data reaches its destination. | The lecture uses latency when explaining the topic. |
 
 #### Phrases
 
@@ -191,11 +191,11 @@ simply because of the speed of light that it takes for communication to travel f
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-| --- | --- |
-| infrastructure | The basic systems and equipment needed for an activity. |
-| vast | Extremely large in size or amount. |
-| distribute | Share work or resources among several people or systems. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| infrastructure | /ˈɪnfɹəstɹˌʌkt‍ʃɚ/ | The basic systems and equipment needed for an activity. | The lecture uses infrastructure when explaining the topic. |
+| vast | /vˈæst/ | Extremely large in size or amount. | The lecture uses vast when explaining the topic. |
+| distribute | /dˈɪstɹɪbjˌuːt/ | Share work or resources among several people or systems. | The lecture uses distribute when explaining the topic. |
 
 #### Phrases
 
@@ -210,11 +210,11 @@ switzerland that includes the large hadron collider they have a vast computing i
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-| --- | --- |
-| overloaded | Given more work or traffic than it can handle. |
-| maliciously | With an intention to cause harm. |
-| denial-of-service attack | An attack that makes a service unavailable by overwhelming it. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| overloaded | /ˌo‍ʊvɚlˈo‍ʊdᵻd/ | Given more work or traffic than it can handle. | The lecture uses overloaded when explaining the topic. |
+| maliciously | /mɐlˈɪʃəsli/ | With an intention to cause harm. | The lecture uses maliciously when explaining the topic. |
+| denial-of-service attack | /dᵻnˈa‍ɪə‍lʌvsˈɜːvɪs ɐtˈæk/ | An attack that makes a service unavailable by overwhelming it. | The lecture uses denial-of-service attack when explaining the topic. |
 
 #### Phrases
 
@@ -229,11 +229,11 @@ we can use distributed systems is to solve bigger problems now those are the adv
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-| --- | --- |
-| robust | Able to keep working well in difficult conditions. |
-| interrupted | Stopped temporarily before completion. |
-| as a whole | Considered as one complete system. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| robust | /ɹo‍ʊbˈʌst/ | Able to keep working well in difficult conditions. | The lecture uses robust when explaining the topic. |
+| interrupted | /ˌɪntɚɹˈʌptᵻd/ | Stopped temporarily before completion. | The lecture uses interrupted when explaining the topic. |
+| as a whole | /æz ɐ hˈo‍ʊl/ | Considered as one complete system. | The lecture uses as a whole when explaining the topic. |
 
 #### Phrases
 
@@ -248,11 +248,11 @@ because if it's a wi-fi network you might be out of range if it's a wired networ
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-| --- | --- |
-| crash | Stop working suddenly because of an error. |
-| non-deterministically | In a way whose result or timing cannot be predicted exactly. |
-| remaining | Still left after other things have gone or failed. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| crash | /kɹˈæʃ/ | Stop working suddenly because of an error. | The lecture uses crash when explaining the topic. |
+| non-deterministically | /nˈɑːndɪtˌɜːmɪnˈɪstɪkli/ | In a way whose result or timing cannot be predicted exactly. | The lecture uses non-deterministically when explaining the topic. |
+| remaining | /ɹᵻmˈe‍ɪnɪŋ/ | Still left after other things have gone or failed. | The lecture uses remaining when explaining the topic. |
 
 #### Phrases
 
@@ -267,11 +267,11 @@ probably want the remaining computers to carry on the task of of serving user re
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-| --- | --- |
-| fault tolerance | The ability to continue working when part of a system fails. |
-| faulty | Not working correctly. |
-| independently | Separately, without being controlled by something else. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| fault tolerance | /fˈɔlt tˈɑːlɚɹəns/ | The ability to continue working when part of a system fails. | The lecture uses fault tolerance when explaining the topic. |
+| faulty | /fˈɔlti/ | Not working correctly. | The lecture uses faulty when explaining the topic. |
+| independently | /ˌɪndᵻpˈɛndəntli/ | Separately, without being controlled by something else. | The lecture uses independently when explaining the topic. |
 
 #### Phrases
 
@@ -286,11 +286,11 @@ lot of people who work professionally on distributed systems think that oh well 
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-| --- | --- |
-| complexity | The state of having many connected and difficult parts. |
-| Pandora's box | A source of many unexpected and difficult problems. |
-| sufficient | Enough for a particular purpose. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| complexity | /kəmplˈɛksᵻɾi/ | The state of having many connected and difficult parts. | The lecture uses complexity when explaining the topic. |
+| Pandora's box | /pændˈɔːɹəz bˈɑːks/ | A source of many unexpected and difficult problems. | The lecture uses Pandora's box when explaining the topic. |
+| sufficient | /səfˈɪʃənt/ | Enough for a particular purpose. | The lecture uses sufficient when explaining the topic. |
 
 #### Phrases
 

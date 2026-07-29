@@ -2,7 +2,7 @@
 title: "[Transcript/Vocabulary] 6 Popular NixOS Beginner Mistakes To Avoid"
 date: 2026-07-29
 categories: ["english-learning", "transcript", "nix"]
-slug: "6-popular-nixos-beginner-mistakes-to-avoid"
+slug: "transcript-6-popular-nixos-beginner-mistakes-to-avoid"
 type: "post"
 ---
 
@@ -20,9 +20,9 @@ whether you are new to NixOS or an experienced user we all know it is a rabbit h
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-| --- | --- |
-| rabbit hole | A situation that becomes increasingly complex as you explore it. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| rabbit hole | /ɹˈæbɪt hˈo‍ʊl/ | A situation that becomes increasingly complex as you explore it. | The lecture uses rabbit hole when explaining the topic. |
 
 #### Phrases
 
@@ -36,9 +36,9 @@ not to tell you about the sponsor of today's video nordvpn I'm sure you all are 
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-| --- | --- |
-| surveillance | Careful observation of people or activities. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| surveillance | /sɚvˈe‍ɪləns/ | Careful observation of people or activities. | The lecture uses surveillance when explaining the topic. |
 
 #### Phrases
 
@@ -52,9 +52,9 @@ internet traffic on your device and allowing you to connect to any of the 118 co
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-| --- | --- |
-| malicious | Intended to cause harm. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| malicious | /mɐlˈɪʃəs/ | Intended to cause harm. | The lecture uses malicious when explaining the topic. |
 
 #### Phrases
 
@@ -68,9 +68,9 @@ and now starting with the first dangerous mistake that I very often see beginner
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-| --- | --- |
-| version control | A system for recording changes to files over time. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| version control | /vˈɜːʒən kəntɹˈo‍ʊl/ | A system for recording changes to files over time. | The lecture uses version control when explaining the topic. |
 
 #### Phrases
 
@@ -84,9 +84,9 @@ will also allow you to share it with others in case you ever have to ask for hel
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-| --- | --- |
-| repository | A storage location for project files and their history. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| repository | /ɹᵻpˈɑːzɪtˌɔːɹi/ | A storage location for project files and their history. | The lecture uses repository when explaining the topic. |
 
 #### Phrases
 
@@ -100,9 +100,9 @@ packages already present on your system and if you want to actually update those
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-| --- | --- |
-| rebuild | Create a system configuration again from its definition. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| rebuild | /ɹᵻbˈɪld/ | Create a system configuration again from its definition. | The lecture uses rebuild when explaining the topic. |
 
 #### Phrases
 
@@ -116,9 +116,9 @@ third mistake many new Nix users do not garbage collecting your Nix store becaus
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-| --- | --- |
-| generation | A saved version of a NixOS system configuration. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| generation | /d‍ʒˌɛnɚɹˈe‍ɪʃən/ | A saved version of a NixOS system configuration. | The lecture uses generation when explaining the topic. |
 
 #### Phrases
 
@@ -132,9 +132,9 @@ updating and cleaning processes using the options you see on the screen next the
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-| --- | --- |
-| garbage collect | Remove data or packages that are no longer needed. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| garbage collect | /ɡˈɑː‍ɹbɪd‍ʒ kəlˈɛkt/ | Remove data or packages that are no longer needed. | The lecture uses garbage collect when explaining the topic. |
 
 #### Phrases
 
@@ -148,9 +148,9 @@ however understanding what is and isn't a part of your configuration is crucial 
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-| --- | --- |
-| declarative | Describing the desired result instead of every action. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| declarative | /dᵻklˈæɹətˌɪv/ | Describing the desired result instead of every action. | The lecture uses declarative when explaining the topic. |
 
 #### Phrases
 
@@ -164,9 +164,9 @@ performed by nix-env will also require nix-env to be undone with no easy way to 
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-| --- | --- |
-| imperatively | By directly telling a system which actions to perform. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| imperatively | /ɪmpˈɛɹətˌɪvli/ | By directly telling a system which actions to perform. | The lecture uses imperatively when explaining the topic. |
 
 #### Phrases
 
@@ -180,8 +180,8 @@ only if you really know what you are doing but for those of you who want to down
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-| profile | A user environment containing installed packages. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
 
 #### Phrases
 
@@ -195,9 +195,9 @@ no real advantage to having a 2,000 line monster flake with configuration.nix, h
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-| --- | --- |
-| module system | A way to organize a configuration into separate files. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| module system | /mˈɑːd‍ʒuːl sˈɪstəm/ | A way to organize a configuration into separate files. | The lecture uses module system when explaining the topic. |
 
 #### Phrases
 
@@ -211,9 +211,9 @@ user try to learn everything right away you will only confuse yourself and end u
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-| --- | --- |
-| overthink | Think about something more than is useful. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| overthink | /ˌo‍ʊvɚθˈɪŋk/ | Think about something more than is useful. | The lecture uses overthink when explaining the topic. |
 
 #### Phrases
 
@@ -227,9 +227,9 @@ example on our Discord server I've seen many people hesitant to try out flakes b
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-| --- | --- |
-| flakes | A Nix feature for reproducible dependency management. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| flakes | /flˈe‍ɪks/ | A Nix feature for reproducible dependency management. | The lecture uses flakes when explaining the topic. |
 
 #### Phrases
 
@@ -243,9 +243,9 @@ learn flakes early but don't let the learning experience harm your productivity 
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-| --- | --- |
-| FHS | The Filesystem Hierarchy Standard used by many Linux systems. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| FHS | /ˌɛfˌe‍ɪt‍ʃˈɛs/ | The Filesystem Hierarchy Standard used by many Linux systems. | The lecture uses FHS when explaining the topic. |
 
 #### Phrases
 
@@ -259,9 +259,9 @@ any other Linux repo and some of them do rely on FHS for one reason or another l
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-| --- | --- |
-| sandbox | An isolated environment for running software. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| sandbox | /sˈændbɑːks/ | An isolated environment for running software. | The lecture uses sandbox when explaining the topic. |
 
 #### Phrases
 
@@ -275,9 +275,9 @@ Docker or drro box to run any programs like on any other drro meaning non FHS co
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-| --- | --- |
-| overblown | Made to seem more serious or important than it is. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| overblown | /ˌo‍ʊvɚblˈo‍ʊn/ | Made to seem more serious or important than it is. | The lecture uses overblown when explaining the topic. |
 
 #### Phrases
 
@@ -291,9 +291,9 @@ next one
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-| --- | --- |
-| generous | Willing to give more than is expected. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| generous | /d‍ʒˈɛnɚɹəs/ | Willing to give more than is expected. | The lecture uses generous when explaining the topic. |
 
 #### Phrases
 

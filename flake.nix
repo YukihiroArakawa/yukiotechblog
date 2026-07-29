@@ -35,6 +35,7 @@
               pkgs.nodejs_24
               pkgs.pnpm_10
               pkgs.python312
+              pkgs.espeak-ng
               pkgs.python312Packages.pyyaml
               pkgs.python312Packages.pypdf
               pkgs.python312Packages.youtube-transcript-api

@@ -2,7 +2,7 @@
 title: "[Transcript/Vocabulary] Best Way To Manage Projext Dependencies | Nix Shells"
 date: 2026-07-29
 categories: ["english-learning", "transcript", "nix"]
-slug: "english-notes-best-way-to-manage-projext-dependencies-nix-shells"
+slug: "transcript-best-way-to-manage-projext-dependencies-nix-shells"
 type: "post"
 ---
 
@@ -22,12 +22,12 @@ A shell can be created, removed, and shared easily. The video covers temporary p
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-|---|---|
-| infamous | Well known for a bad or difficult reason. |
-| pollute | To make something messy by adding unwanted things. |
-| manageable | Easy enough to control, organize, or deal with. |
-| “without further ado” | Without waiting or talking any more; let us begin. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| infamous | /ˈɪnfəməs/ | Well known for a bad or difficult reason. | The lecture uses infamous when explaining the topic. |
+| pollute | /pəlˈuːt/ | To make something messy by adding unwanted things. | The lecture uses pollute when explaining the topic. |
+| manageable | /mˈænɪd‍ʒəbə‍l/ | Easy enough to control, organize, or deal with. | The lecture uses manageable when explaining the topic. |
+| “without further ado” | /wɪðˌa‍ʊt fˈɜːðɚɹ ɐdˈuː/ | Without waiting or talking any more; let us begin. | The lecture uses “without further ado” when explaining the topic. |
 
 ### 0:43–1:22 — Trying packages temporarily
 
@@ -39,11 +39,11 @@ After leaving the shell with `exit` or closing the terminal, the package is no l
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-|---|---|
-| temporarily | For a limited time, not permanently. |
-| preserve | To keep something in its existing state. |
-| “to begin with” | At the start or originally. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| temporarily | /tˌɛmpɚɹˈɛɹᵻli/ | For a limited time, not permanently. | The lecture uses temporarily when explaining the topic. |
+| preserve | /pɹɪzˈɜːv/ | To keep something in its existing state. | The lecture uses preserve when explaining the topic. |
+| “to begin with” | /tə bɪɡˈɪn wɪð/ | At the start or originally. | The lecture uses “to begin with” when explaining the topic. |
 
 ### 1:22–2:35 — The Nix store and garbage collection
 
@@ -55,13 +55,13 @@ This gives users room to experiment without permanently filling the normal envir
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-|---|---|
-| expose | To make something available or visible. |
-| Nix store | The directory where Nix keeps packages and their dependencies. |
-| garbage collection | The process of removing data that is no longer needed. |
-| orphaned | No longer connected to or needed by anything. |
-| “for good” | Permanently. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| expose | /ɛkspˈo‍ʊz/ | To make something available or visible. | The lecture uses expose when explaining the topic. |
+| Nix store | /nˈɪks stˈɔː‍ɹ/ | The directory where Nix keeps packages and their dependencies. | The lecture uses Nix store when explaining the topic. |
+| garbage collection | /ɡˈɑː‍ɹbɪd‍ʒ kəlˈɛkʃən/ | The process of removing data that is no longer needed. | The lecture uses garbage collection when explaining the topic. |
+| orphaned | /ˈɔː‍ɹfənd/ | No longer connected to or needed by anything. | The lecture uses orphaned when explaining the topic. |
+| “for good” | /fɔː‍ɹ ɡˈʊd/ | Permanently. | The lecture uses “for good” when explaining the topic. |
 
 #### Phrases
 
@@ -78,12 +78,12 @@ This is useful for development because files in the current project remain direc
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-|---|---|
-| isolated | Separated from the surrounding system. |
-| tinkering | Experimenting with something to learn or improve it. |
-| affect | To cause a change in something. |
-| “keep in mind” | Remember this important point. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| isolated | /ˈa‍ɪsəlˌe‍ɪɾᵻd/ | Separated from the surrounding system. | The lecture uses isolated when explaining the topic. |
+| tinkering | /tˈɪŋkɚɹɪŋ/ | Experimenting with something to learn or improve it. | The lecture uses tinkering when explaining the topic. |
+| affect | /ɐfˈɛkt/ | To cause a change in something. | The lecture uses affect when explaining the topic. |
+| “keep in mind” | /kˈiːp ɪn mˈa‍ɪnd/ | Remember this important point. | The lecture uses “keep in mind” when explaining the topic. |
 
 ### 3:11–4:05 — Defining a shell declaratively
 
@@ -93,12 +93,12 @@ The video shows a flexible Nix function that accepts a package set and returns a
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-|---|---|
-| declaratively | By describing the desired result instead of listing every action. |
-| declarative configuration | A description of what a system should contain or look like. |
-| blueprint | A plan that describes how something should be created. |
-| instance | One particular version or occurrence of something. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| declaratively | /dᵻklˈæɹətˌɪvli/ | By describing the desired result instead of listing every action. | The lecture uses declaratively when explaining the topic. |
+| declarative configuration | /dᵻklˈæɹətˌɪv kənfˌɪɡjɚɹˈe‍ɪʃən/ | A description of what a system should contain or look like. | The lecture uses declarative configuration when explaining the topic. |
+| blueprint | /blˈuːpɹɪnt/ | A plan that describes how something should be created. | The lecture uses blueprint when explaining the topic. |
+| instance | /ˈɪnstəns/ | One particular version or occurrence of something. | The lecture uses instance when explaining the topic. |
 
 ### 4:05–5:20 — Useful `mkShell` options
 
@@ -110,10 +110,10 @@ The `shellHook` option runs Bash code automatically when the shell starts. Other
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-|---|---|
-| self-explanatory | Clear enough that it needs little explanation. |
-| shell hook | Code that runs automatically when a shell starts. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| self-explanatory | /sˈɛlfɛksplˈænətˌɔːɹi/ | Clear enough that it needs little explanation. | The lecture uses self-explanatory when explaining the topic. |
+| shell hook | /ʃˈɛl hˈʊk/ | Code that runs automatically when a shell starts. | The lecture uses shell hook when explaining the topic. |
 
 ### 5:20–6:08 — Entering and using the shell
 
@@ -125,9 +125,9 @@ Closing the shell returns the user to the normal environment.
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-|---|---|
-| cumbersome | Difficult to use because it is long, complex, or inconvenient. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| cumbersome | /kˈʌmbɚsˌʌm/ | Difficult to use because it is long, complex, or inconvenient. | The lecture uses cumbersome when explaining the topic. |
 
 ### 6:08–7:09 — Development shells with flakes
 
@@ -139,10 +139,10 @@ The shell is activated with `nix develop`. Because the dependencies are managed 
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-|---|---|
-| “mix and match” | To combine items chosen from different groups. |
-| consistent | Staying the same across people, machines, or times. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| “mix and match” | /mˈɪks ænd mˈæt‍ʃ/ | To combine items chosen from different groups. | The lecture uses “mix and match” when explaining the topic. |
+| consistent | /kənsˈɪstənt/ | Staying the same across people, machines, or times. | The lecture uses consistent when explaining the topic. |
 
 #### Phrases
 
@@ -158,11 +158,11 @@ This is useful when a developer wants to examine the build process step by step.
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-|---|---|
-| interactively | In a way that lets a person act and see results step by step. |
-| “come to the rescue” | To arrive with a solution to a difficult problem. |
-| build process | The complete set of steps used to turn source code into a package. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| interactively | /ˌɪntɚɹˈæktɪvli/ | In a way that lets a person act and see results step by step. | The lecture uses interactively when explaining the topic. |
+| “come to the rescue” | /kˈʌm tə ðə ɹˈɛskjuː/ | To arrive with a solution to a difficult problem. | The lecture uses “come to the rescue” when explaining the topic. |
+| build process | /bˈɪld pɹˈɑːsɛs/ | The complete set of steps used to turn source code into a package. | The lecture uses build process when explaining the topic. |
 
 #### Phrases
 
@@ -183,13 +183,13 @@ The developer can stop between phases, inspect files, make temporary changes, an
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-|---|---|
-| derivation | A Nix description of how to produce a package or another build result. |
-| unpack | To extract files from an archive. |
-| tarball | A group of files stored in a `.tar` archive, often compressed. |
-| modification | A change made to something. |
-| incredibly useful | Extremely helpful. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| derivation | /dˌɛɹɪvˈe‍ɪʃən/ | A Nix description of how to produce a package or another build result. | The lecture uses derivation when explaining the topic. |
+| unpack | /ʌnpˈæk/ | To extract files from an archive. | The lecture uses unpack when explaining the topic. |
+| tarball | /tˈɑː‍ɹbɔːl/ | A group of files stored in a `.tar` archive, often compressed. | The lecture uses tarball when explaining the topic. |
+| modification | /mˌɑːdɪfɪkˈe‍ɪʃən/ | A change made to something. | The lecture uses modification when explaining the topic. |
+| incredibly useful | /ɪŋkɹˈɛdɪbli jˈuːsfə‍l/ | Extremely helpful. | The lecture uses incredibly useful when explaining the topic. |
 
 #### Phrases
 
@@ -207,9 +207,9 @@ When `nix develop` is run, it uses an available development shell. If an appropr
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-|---|---|
-| wrapper | A simpler interface built around another function or tool. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| wrapper | /ɹˈæpɚ/ | A simpler interface built around another function or tool. | The lecture uses wrapper when explaining the topic. |
 
 ### 10:08–10:45 — Flake URLs and conclusion
 
@@ -219,7 +219,7 @@ The video concludes by emphasizing how powerful this is for sharing development 
 
 #### Vocabulary
 
-| Word or expression | Simple English meaning |
-|---|---|
-| “at your disposal” | Available for you to use. |
-| hosted | Stored and made available on a server or online service. |
+| Word or expression | IPA | Simple English meaning | Example |
+| --- | --- | --- | --- |
+| “at your disposal” | /æt jʊ‍ɹ dɪspˈo‍ʊzə‍l/ | Available for you to use. | The lecture uses “at your disposal” when explaining the topic. |
+| hosted | /hˈo‍ʊstᵻd/ | Stored and made available on a server or online service. | The lecture uses hosted when explaining the topic. |
