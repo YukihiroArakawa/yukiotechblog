@@ -23,8 +23,8 @@ def main() -> None:
     for start_minutes, start_seconds, end_minutes, end_seconds in headings:
         start = int(start_minutes) * 60 + int(start_seconds)
         end = int(end_minutes) * 60 + int(end_seconds)
-        # Keep caption chunks readable without merging or dropping their words.
-        body = "\n\n".join(
+        # Preserve every caption chunk while keeping each time section compact.
+        body = " ".join(
             snippet.text for snippet in transcript if start <= snippet.start < end
         )
         if not body:
