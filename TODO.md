@@ -13,3 +13,5 @@
 - [ ] Mermaid記法を表示できるようにする。
 - [ ] Svelteのコードをコンポーネント指向？な感じでリファクタリングする。コンポーネントにCSSをカプセル化したり。
 - [ ] DNSSECを有効化する
+- [ ] redirect setting via api
+  - https://developers.cloudflare.com/rules/url-forwarding/bulk-redirects/create-api/
