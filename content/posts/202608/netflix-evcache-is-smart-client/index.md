@@ -65,6 +65,37 @@ for (EVCacheClient client : clients) {
 
 https://github.com/Netflix/EVCache/blob/d3a6edb06d17b86762ca81dc39e5f5b30cf4d6bd/evcache-core/src/main/java/com/netflix/evcache/EVCacheImpl.java#L2551
 
+## memcached自体にはレプリケーション機能はないらしい
+
+ストレージレイヤーでレプリケーションを抽象化するというアプローチは取れないのか？memcachedではできないのか？というとできないらしい。
+
+> How do you handle replication? 
+> It doesn’t. Adding replication to the system halves your effective cache size. If you can’t handle even a few percent extra cache misses, you have serious problems. Even with replication, things can break. More moving parts. Software to crash.
+
+https://docs.memcached.org/userguide/faq/
+
+もし数％のキャッシュミスに耐えられないのであれば設計ミスってるよと言っているあたり、memcachedとしての割り切りを感じる。
+
+## redisではレプリケーションできそう
+
+じゃあ、他のキャッシュサーバではどうかというとRedisではレプリケーションをサポートしていそうだった。
+
+https://redis.io/docs/latest/operate/oss_and_stack/management/replication/
+
+ただmasterからreplicaへの非同期コピーが基本なので、やはりmaster/replica間のバージョン違いやキャッシュミスへの考慮はキャッシュサーバ以外でも考慮しないといけなさそうではあるのかな。
+
+## キャッシュサーバのユースケース的に強整合性が必要なデータを置かない
+
+結局の所、キャッシュサーバはDBへのI/Oを軽くするという目的がメインだと思うので、決済関連のデータとか強整合性が必要なデータはおいていないと思う。
+
+RDBでもログを永続化した上でバッファというキャッシュレイヤーにデータを持つ構成になっているので、失ったら困るデータは永続化すべしというごく当たり前の話な気がした。
+
+Netflixで言えば、まぁビデオ作品や作品の説明情報などのデータのバージョンがクライアントによって多少異なっていたとしても大きな問題にはならないだろう。
+
+実際、NetflixはcockroachDBというNewSQLも使っており、強整合性が必要なトランザクションをしたい場合はNewSQLでやっているのだと思う。
+
+そうなると、クライアントサイドでレプリケーションの責務を担わせるので良くね？多少レプリケーションミスってもまぁ最悪オリジンあるしとなる気もした。
+
 ## 泥臭いように見えるが実用的な設計アプローチは案外ビックテックでも多いのかもしれない
 
 勝手なイメージでビッグテックのコードは責務がきれいに分かれていてエレガントな設計、コードで溢れていると思っていた。
